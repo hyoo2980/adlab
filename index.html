@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="대행사 한 달치 영상 소재, 하루에 만듭니다. 계약 기간 없음 · 고정비 없음. 우리 제품으로 샘플 받아보세요.">
+<meta property="og:title" content="AD Lab · 메타 광고 영상 소재">
+<meta property="og:description" content="대행사 한 달치 영상 소재, 하루에 만듭니다. 계약 기간 없음 · 고정비 없음.">
+<meta property="og:type" content="website">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>AD Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=IBM+Plex+Sans+KR:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 프로덕션 스튜디오 — 큰 세리프 헤드라인, 넓은 여백, 9:16 컨택트 시트 띠, 색은 REC 점 하나 */
+:root{
+  --paper:#FAFAF7; --ink:#0C0C0D; --sub:#6B6B6F; --rule:#E2E2DD; --frame:#EDEDE8; --frame-2:#E3E3DD; --rec:#E5372B; --btn-ink:#FAFAF7;
+  --serif:"Noto Serif KR","Apple SD Gothic Neo",serif;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E0E0F; --ink:#F2F2EE; --sub:#9A9A9E; --rule:#26262A; --frame:#1A1A1D; --frame-2:#222226; --rec:#FF5446; --btn-ink:#0E0E0F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E0E0F; --ink:#F2F2EE; --sub:#9A9A9E; --rule:#26262A; --frame:#1A1A1D; --frame-2:#222226; --rec:#FF5446; --btn-ink:#0E0E0F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+p,h1,h2,h3{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:24px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.rec{display:inline-flex;align-items:center;gap:10px}
+.rec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rec);animation:blink 1.6s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--btn-ink);padding:16px 26px;border-radius:999px;font:500 16px var(--sans);transition:gap .2s ease}
+.btn:hover{gap:20px}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--rec);outline-offset:3px}
+.arrow{font-family:var(--mono)}
+
+/* top */
+.top{border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.logo{font-family:var(--serif);font-weight:900;font-size:20px;letter-spacing:-.02em}
+.logo span{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.14em;color:var(--sub);margin-left:10px;vertical-align:2px}
+.top a.link{font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+/* hero */
+.hero{padding-block:88px 56px}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(40px,7.6vw,96px);line-height:1.12;letter-spacing:-.035em;margin-top:28px;text-wrap:balance}
+.hero h1 .thin{font-weight:500;color:var(--sub)}
+.hero-foot{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.hero-foot p{font-size:18px;color:var(--sub);max-width:34ch}
+.hero-foot .cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+
+/* contact sheet */
+.sheet{border-block:1px solid var(--rule);overflow:hidden;padding-block:22px;position:relative}
+.reel{display:flex;gap:12px;width:max-content;animation:roll 60s linear infinite}
+@media (prefers-reduced-motion:reduce){.reel{animation:none}.rec::before{animation:none}}
+@keyframes roll{to{transform:translateX(-50%)}}
+.cut{width:176px;aspect-ratio:1/1;max-width:100%;border-radius:8px;background:var(--frame);position:relative;flex:none;overflow:hidden}
+.cut img{width:100%;height:100%;object-fit:cover;display:block}
+.cut b{position:absolute;top:8px;left:8px;font:500 10px var(--mono);letter-spacing:.08em;color:#FFFFFF;background:rgba(0,0,0,.55);padding:2px 6px;border-radius:3px}
+.cut.hot b{background:var(--rec)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-block:72px}
+.n{padding-right:24px;display:grid;gap:8px;min-width:0}
+.n+.n{border-left:1px solid var(--rule);padding-left:32px}
+.n strong{font-family:var(--serif);font-weight:900;font-size:clamp(44px,6vw,72px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.n strong small{font-size:.38em;font-weight:500;letter-spacing:0;margin-left:6px;color:var(--sub)}
+.n span{color:var(--sub);font-size:15px}
+
+/* why */
+.why{border-top:1px solid var(--rule);padding-block:88px;display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+.why h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.25;letter-spacing:-.025em;text-wrap:balance}
+.list{display:grid;border-top:1px solid var(--ink)}
+.item{display:grid;grid-template-columns:64px 1fr;gap:16px;padding-block:24px;border-bottom:1px solid var(--rule)}
+.item h3{font-size:19px;font-weight:500;margin-bottom:6px}
+.item p{color:var(--sub);font-size:15px}
+
+/* terms */
+.terms{background:var(--ink);color:var(--paper)}
+.terms .wrap{padding-block:96px;display:grid;gap:36px}
+.terms h2{font-family:var(--serif);font-weight:900;font-size:clamp(34px,6vw,76px);line-height:1.15;letter-spacing:-.035em}
+.terms h2 span{display:block}
+.terms h2 span:last-child{color:var(--rec)}
+.terms p{max-width:46ch;opacity:.7;font-size:17px}
+
+/* final */
+.final .wrap{padding-block:104px;display:grid;justify-items:start;gap:28px}
+.final h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.6vw,56px);line-height:1.2;letter-spacing:-.03em;text-wrap:balance}
+.steps{display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--sub);font-size:15px}
+.steps b{font-family:var(--mono);font-weight:500;color:var(--ink);margin-right:8px}
+
+footer{border-top:1px solid var(--rule)}
+footer .wrap{padding-block:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--sub)}
+
+@media (max-width:820px){
+  .hero{padding-block:56px 40px}
+  .nums{grid-template-columns:1fr;gap:28px;padding-block:52px}
+  .n+.n{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:28px}
+  .why{grid-template-columns:1fr;gap:32px;padding-block:64px}
+  .item{grid-template-columns:44px 1fr}
+  .terms .wrap,.final .wrap{padding-block:72px}
+  .cut{width:128px}
+}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">AD Lab<span>META CREATIVE</span></a>
+    <a class="link" href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener">샘플 신청</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="mono rec">Rec · Meta Ads Video Creative</span>
+      <h1>대행사 한 달치 영상 소재,<br><span class="thin">저희는</span> 하루에 만듭니다.</h1>
+      <div class="hero-foot">
+        <p>위닝 소재는 만드는 게 아니라 메타가 고릅니다. 고를 영상을 충분히 넣는 게 저희 일입니다.</p>
+        <div class="cta">
+          <a class="btn" href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener">우리 제품으로 샘플 받기 <span class="arrow">→</span></a>
+          <span class="mono">계약 기간 없음 · 고정비 없음</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sheet" aria-label="하루 제작분 20편을 표현한 컷 띠">
+    <div class="reel" id="reel"></div>
+  </div>
+
+  <section class="wrap nums" aria-label="숫자로 보는 AD Lab">
+    <div class="n"><strong>20<small>편 / 일</small></strong><span>더 많이 만들고, 대행사보다 덜 받습니다</span></div>
+    <div class="n"><strong>20<small>+ 훅</small></strong><span>뭐가 터질지는 아무도 모릅니다. 그래서 전부 다르게 만들고, 고르는 건 메타에 맡깁니다</span></div>
+    <div class="n"><strong>0<small>원</small></strong><span>성과와 상관없이 나가는 월 고정비</span></div>
+  </section>
+
+  <section class="wrap why">
+    <h2>차이는 사람이 아니라 구조입니다.</h2>
+    <div class="list">
+      <div class="item"><span class="mono">01</span><div><h3>이미지 말고 영상</h3><p>지금 메타에서 승부가 나는 건 영상입니다. 매일 영상으로만 공급합니다.</p></div></div>
+      <div class="item"><span class="mono">02</span><div><h3>핑계 말고 데이터</h3><p>"머신러닝 중"이라며 광고비를 태우지 않습니다. 숫자가 안 나오면 바로 끄고, 새 소재로 갈아 끼웁니다.</p></div></div>
+      <div class="item"><span class="mono">03</span><div><h3>완성본에 원본까지</h3><p>720p 완성본과 함께 캡컷 원본을 드립니다. 잘 된 소재는 직접 고쳐 쓰세요.</p></div></div>
+    </div>
+  </section>
+
+  <section class="terms" aria-label="계약 조건">
+    <div class="wrap">
+      <span class="mono rec">Terms</span>
+      <h2><span>계약 기간 없음.</span><span>고정비 없음.</span><span>안 되면, 그만.</span></h2>
+      <p>ROAS가 나올 때까지 소재를 계속 넣습니다. 다른 곳보다 못하면 그만두시면 됩니다.</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="mono">Start</span>
+      <h2>제품 링크 하나면 시작합니다.</h2>
+      <div class="steps">
+        <span><b>01</b>신청서 작성</span>
+        <span><b>02</b>방향 정리해서 연락</span>
+        <span><b>03</b>대표님 제품으로 샘플 제작</span>
+      </div>
+      <a class="btn" href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener">샘플 신청하기 <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© AD Lab</span>
+    <a href="https://www.threads.com/@leo.adlab" target="_blank" rel="noopener">Threads @leo.adlab</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reel=document.getElementById('reel');
+  var hot=[0,5,10];
+  function make(dup){
+    for(var i=0;i<16;i++){
+      var c=document.createElement('div');
+      c.className='cut'+(hot.indexOf(i)>-1?' hot':'');
+      var img=document.createElement('img');
+      img.src='ads/ad'+String(i+1).padStart(2,'0')+'.webp';
+      img.alt=dup?'':'광고 소재 '+(i+1)+'번 첫 장면';
+      img.loading='lazy';
+      var b=document.createElement('b'); b.textContent='AD '+String(i+1).padStart(2,'0');
+      c.appendChild(img); c.appendChild(b); reel.appendChild(c);
+    }
+  }
+  make(false); make(true);
+})();
+</script>
+
+</body>
+</html>
