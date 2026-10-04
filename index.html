@@ -222,13 +222,14 @@ footer .wrap{padding-block:26px;display:flex;justify-content:space-between;flex-
 <script>
 (function(){
   var reel=document.getElementById('reel');
+  var V='20261004b'; // 영상 바꿀 때마다 값 변경
   var hot=[0,5,10];
   function make(dup){
     for(var i=0;i<16;i++){
       var c=document.createElement('div');
       c.className='cut'+(hot.indexOf(i)>-1?' hot':'');
       var img=document.createElement('img');
-      img.src='ads/ad'+String(i+1).padStart(2,'0')+'.webp';
+      img.src='ads/ad'+String(i+1).padStart(2,'0')+'.webp?v='+V;
       img.alt=dup?'':'광고 소재 '+(i+1)+'번 첫 장면';
       img.loading='lazy';
       var b=document.createElement('b'); b.textContent='AD '+String(i+1).padStart(2,'0');
