@@ -95,6 +95,15 @@ p,h1,h2,h3{margin:0}
 .steps b{font-family:var(--mono);font-weight:500;color:var(--ink);margin-right:8px}
 
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.perks{display:flex;flex-wrap:wrap;gap:8px}
+.perks span{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--ink);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink);background:transparent;animation:lit 4.5s ease-in-out infinite}
+.perks span::before{content:"✓";color:var(--rec);font-weight:700}
+.perks span::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+.perks span:nth-child(2),.perks span:nth-child(2)::after{animation-delay:1.5s}
+.perks span:nth-child(3),.perks span:nth-child(3)::after{animation-delay:3s}
+@keyframes lit{0%,4%{background:transparent;color:var(--ink);transform:none}8%,26%{background:var(--ink);color:var(--btn-ink);transform:translateY(-2px)}32%,100%{background:transparent;color:var(--ink);transform:none}}
+@keyframes shine{0%,6%{left:-60%}24%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.perks span,.perks span::after{animation:none}}
 .threads{border-top:1px solid var(--rule)}
 .threads .wrap{padding-block:72px;display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
 .threads .wrap>div{display:grid;gap:14px;max-width:620px;min-width:0}
@@ -138,7 +147,9 @@ footer .wrap{padding-block:26px;display:flex;justify-content:space-between;flex-
         <p>위닝 소재는 만드는 게 아니라 메타가 고릅니다. 고를 영상을 충분히 넣는 게 저희 일입니다.</p>
         <div class="cta">
           <a class="btn" href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener">우리 제품으로 샘플 받기 <span class="arrow">→</span></a>
-          <span class="mono">샘플 비용 0원 · 계약 기간 없음 · 고정비 없음</span>
+          <div class="perks" aria-label="조건">
+            <span>샘플 비용 0원</span><span>계약 기간 없음</span><span>고정비 없음</span>
+          </div>
         </div>
       </div>
     </div>
