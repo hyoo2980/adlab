@@ -3,860 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AD Lab · 광고 영상 소재 제작</title>
-<meta name="description" content="이번 달 광고에 넣은 영상 소재, 몇 편이었나요? 팔리는 영상 소재를 편당 4만 원부터. 대표님 제품으로 만든 첫 3편은 무료입니다. 계약 기간·고정비 없음.">
-<meta property="og:title" content="AD Lab · 광고 영상 소재 제작">
-<meta property="og:description" content="팔리는 영상 소재, 편당 4만 원부터. 첫 3편은 무료로 받아보세요.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://adlab.ai.kr/">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-/* 흑백 + REC 빨강. 굵은 고딕 헤드라인, 9:16 영상 카드가 주인공 */
-:root{
-  --paper:#FAFAF7; --ink:#0C0C0D; --sub:#5F5F64; --rule:#E2E2DD; --frame:#EDEDE8; --card:#FFFFFF;
-  --rec:#E5372B; --btn-ink:#FAFAF7; --inv-bg:#0C0C0D; --inv-ink:#F2F2EE; --inv-sub:#A3A3A8; --inv-rule:#2A2A2E;
-  --sans:"Pretendard Variable",Pretendard,system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#0E0E0F; --ink:#F2F2EE; --sub:#9E9EA3; --rule:#26262A; --frame:#1A1A1D; --card:#151517;
-  --rec:#FF5446; --btn-ink:#0E0E0F; --inv-bg:#F2F2EE; --inv-ink:#0E0E0F; --inv-sub:#55555A; --inv-rule:#D8D8D2; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#0E0E0F; --ink:#F2F2EE; --sub:#9E9EA3; --rule:#26262A; --frame:#1A1A1D; --card:#151517;
-  --rec:#FF5446; --btn-ink:#0E0E0F; --inv-bg:#F2F2EE; --inv-ink:#0E0E0F; --inv-sub:#55555A; --inv-rule:#D8D8D2; color-scheme:dark}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
-img,video{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-p,h1,h2,h3{margin:0}
-[hidden]{display:none!important}
-.wrap{max-width:1160px;margin:0 auto;padding-inline:24px}
-section{padding-block:104px}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
-.rec{display:inline-flex;align-items:center;gap:10px}
-.rec::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rec);animation:blink 1.6s steps(2,start) infinite}
-@keyframes blink{to{visibility:hidden}}
-.h2{font-weight:800;font-size:clamp(28px,4.2vw,48px);line-height:1.25;letter-spacing:-.035em;text-wrap:balance;margin-top:16px}
-.lead{margin-top:18px;color:var(--sub);font-size:18px;max-width:52ch}
-.hl{color:var(--rec)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;white-space:nowrap;background:var(--ink);color:var(--btn-ink);padding:17px 28px;border-radius:999px;font:700 17px var(--sans);border:0;cursor:pointer;transition:gap .2s ease,transform .2s ease}
-.btn:hover{gap:18px}
-.btn.rec-bg{background:var(--rec);color:#fff}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
-.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--rec);outline-offset:3px}
-.arrow{font-family:var(--mono);font-weight:500}
-.sec-cta{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
-.sec-cta small{color:var(--sub);font-size:14px}
-
-/* header */
-.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule)}
-.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
-.logo{font-weight:900;font-size:21px;letter-spacing:-.03em}
-.logo span{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.14em;color:var(--sub);margin-left:10px;vertical-align:2px}
-.nav{display:flex;gap:24px;margin-left:auto;font-size:15px;color:var(--sub)}
-.nav a:hover{color:var(--ink)}
-.top .btn{padding:10px 18px;font-size:15px}
-
-/* hero */
-.hero{padding-block:72px 40px}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:center}
-.hero h1{font-weight:900;font-size:clamp(36px,5.2vw,68px);line-height:1.14;letter-spacing:-.045em;margin-top:22px}
-.hero h1 em{font-style:normal;color:var(--rec);white-space:nowrap}
-.hero .sub{margin-top:26px;font-size:19px;color:var(--sub);max-width:40ch}
-.hero .sub b{color:var(--ink);font-weight:700}
-.hero .sub span{display:block}
-.hero .sub .ask{margin-top:14px;color:var(--ink)}
-.hero .ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
-.chips{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--sub)}
-.chips span::before{content:"✓";color:var(--rec);font-weight:800;margin-right:6px}
-.phones{position:relative;display:flex;justify-content:center;align-items:center;min-height:520px;min-width:0}
-.phone{width:min(230px,40%);aspect-ratio:9/16;border-radius:26px;background:#000;border:6px solid #111;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);overflow:hidden;position:relative;flex:none}
-.phone:nth-child(1){margin-right:-9%;transform:rotate(-7deg) scale(.88);z-index:1}
-.phone:nth-child(2){z-index:2}
-.phone:nth-child(3){margin-left:-9%;transform:rotate(7deg) scale(.88);z-index:1}
-.ui{position:absolute;inset:auto 0 0 0;padding:10px;display:grid;gap:6px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:11px}
-.ui .who{display:flex;align-items:center;gap:6px;font-weight:700}
-.ui .who i{width:18px;height:18px;border-radius:50%;background:#fff;opacity:.85}
-.ui .who small{font-weight:400;opacity:.75}
-.ui .shop{background:rgba(255,255,255,.92);color:#111;border-radius:6px;padding:6px 8px;font-weight:700;display:flex;justify-content:space-between}
-
-/* media card (이미지 → 나중에 영상으로 교체) */
-.media{position:absolute;inset:0;overflow:hidden;background:#111}
-.media .bg{position:absolute;inset:-10%;width:120%;height:120%;object-fit:cover;filter:blur(18px) brightness(.55);transform:scale(1.1)}
-.media .fg{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);width:100%;aspect-ratio:1/1;object-fit:cover}
-.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
-/* samples reel */
-.samples{padding-block:28px;border-block:1px solid var(--rule);overflow:hidden}
-.reel{display:flex;gap:14px;width:max-content;animation:roll 70s linear infinite}
-.samples:hover .reel{animation-play-state:paused}
-@keyframes roll{to{transform:translateX(-50%)}}
-.cut{width:168px;aspect-ratio:9/16;border-radius:14px;position:relative;flex:none;overflow:hidden}
-.cut b{position:absolute;top:10px;left:10px;font:500 10px var(--mono);letter-spacing:.08em;color:#fff;background:rgba(0,0,0,.55);padding:2px 7px;border-radius:4px;z-index:2}
-.cut.hot b{background:var(--rec)}
-.samples-note{margin-top:16px;text-align:center;font-size:14px;color:var(--sub)}
-
-/* pain */
-.quotes{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.q{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:28px;display:grid;gap:14px;align-content:start}
-.q p{font-weight:800;font-size:22px;line-height:1.4;letter-spacing:-.03em}
-.q p::before{content:"“";color:var(--rec)}
-.q p::after{content:"”";color:var(--rec)}
-.q span{color:var(--sub);font-size:15px}
-.punch{margin-top:40px;font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-.03em}
-
-/* insight: 4 vs 40 */
-.insight{border-top:1px solid var(--rule)}
-.vs{margin-top:52px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.vs>div{border:1px solid var(--rule);border-radius:18px;padding:28px;background:var(--card)}
-.vs>div.win{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.vs .label{font-size:15px;color:var(--sub)}
-.vs strong{display:block;font-weight:900;font-size:clamp(40px,5vw,60px);letter-spacing:-.04em;line-height:1.1;margin:6px 0 18px}
-.vs strong small{font-size:.4em;font-weight:700;margin-left:4px;color:var(--sub)}
-.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;max-width:320px}
-.dots i{aspect-ratio:9/16;border-radius:3px;background:var(--frame)}
-.dots i.on{background:var(--ink)}
-.dots i.win{background:var(--rec)}
-.insight .foot{margin-top:28px;color:var(--sub);max-width:60ch}
-
-/* scarcity: 팔리는 소재는 드물다 */
-.rare{background:var(--inv-bg);color:var(--inv-ink)}
-.rare .mono{color:var(--inv-sub)}
-.rare .h2{font-size:clamp(32px,5.4vw,68px);line-height:1.18}
-.rare .h2 span{display:block}
-.rare .h2 span:last-child{color:var(--rec)}
-.rare-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--inv-rule)}
-.rare-grid div{padding:26px 26px 0 0}
-.rare-grid div+div{padding-left:26px;border-left:1px solid var(--inv-rule)}
-.rare-grid h3{font-size:19px;font-weight:800;letter-spacing:-.02em}
-.rare-grid p{margin-top:8px;color:var(--inv-sub);font-size:15px}
-.rare .closing{margin-top:56px;font-size:clamp(19px,2.2vw,24px);font-weight:700;max-width:40ch;letter-spacing:-.02em}
-
-/* solution */
-.cards{margin-top:52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:30px;display:grid;gap:10px;align-content:start}
-.card .num{font-weight:900;font-size:44px;letter-spacing:-.04em;line-height:1}
-.card .num small{font-size:.42em;font-weight:700;color:var(--sub);margin-left:4px}
-.card h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-top:6px}
-.card p{color:var(--sub);font-size:15px}
-
-/* compare */
-.compare{border-top:1px solid var(--rule)}
-.table{margin-top:48px;border:1px solid var(--rule);border-radius:18px;overflow:hidden;background:var(--card)}
-.row{display:grid;grid-template-columns:150px 1fr 1fr}
-.row>*{padding:18px 22px;border-top:1px solid var(--rule)}
-.row:first-child>*{border-top:0;font-weight:700;font-size:14px;color:var(--sub)}
-.row>:first-child{font-weight:700}
-.row>:nth-child(2){color:var(--sub)}
-.row>:nth-child(3){font-weight:700;background:color-mix(in srgb,var(--rec) 6%,transparent)}
-.row:first-child>:nth-child(3){color:var(--rec)}
-
-/* proof (숫자/후기: CONFIG에서 수정) */
-.proof{border-top:1px solid var(--rule)}
-.stats{margin-top:48px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink)}
-.stat{padding:26px 20px 0 0;display:grid;gap:6px}
-.stat+.stat{padding-left:20px;border-left:1px solid var(--rule)}
-.stat strong{font-weight:900;font-size:clamp(36px,4.6vw,56px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.stat strong small{font-size:.4em;font-weight:700;margin-left:3px;color:var(--sub)}
-.stat>span{color:var(--sub);font-size:14px}
-.reviews{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.review{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:26px;display:grid;gap:14px;align-content:start}
-.review .metric{display:flex;align-items:baseline;gap:8px}
-.review .metric strong{font-weight:900;font-size:34px;letter-spacing:-.03em;color:var(--rec);font-variant-numeric:tabular-nums}
-.review .metric>span{font-size:14px;color:var(--sub)}
-.review p{font-size:16px}
-.review .who{font-size:14px;color:var(--sub)}
-.team{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:center;padding:28px;border-radius:18px;background:var(--frame)}
-.team .badge{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--sub)}
-.team p{font-size:16px}
-.team p b{font-weight:800}
-.team a{font-size:14px;border-bottom:1px solid currentColor;justify-self:start}
-
-/* offer (free 3) */
-.offer{background:var(--inv-bg);color:var(--inv-ink)}
-.offer .mono{color:var(--inv-sub)}
-.offer .lead{color:var(--inv-sub)}
-.offer-grid{margin-top:52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.offer-grid>div{border:1px solid var(--inv-rule);border-radius:18px;padding:28px}
-.offer-grid h3{font-size:14px;font-family:var(--mono);font-weight:500;letter-spacing:.1em;color:var(--inv-sub);text-transform:uppercase}
-.offer-grid ol,.offer-grid ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px}
-.offer-grid li{display:grid;grid-template-columns:28px 1fr;gap:6px;font-size:16px}
-.offer-grid li b{font-family:var(--mono);font-weight:500;color:var(--rec)}
-.offer-grid li small{display:block;color:var(--inv-sub);font-size:14px}
-.offer .btn{background:var(--rec);color:#fff}
-.offer .sec-cta small{color:var(--inv-sub)}
-.safe{margin-top:28px;padding:20px 22px;border-left:3px solid var(--rec);background:color-mix(in srgb,var(--inv-ink) 6%,transparent);border-radius:0 12px 12px 0;max-width:640px;font-size:16px}
-
-/* pricing */
-.plans{margin-top:52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
-.plan{position:relative;background:var(--card);border:1px solid var(--rule);border-radius:20px;padding:30px;display:grid;gap:18px;align-content:start}
-.plan.best{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.plan .tag{position:absolute;top:-12px;left:28px;background:var(--rec);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px}
-.plan h3{font-size:18px;font-weight:800}
-.plan .price{font-weight:900;font-size:46px;letter-spacing:-.04em;line-height:1}
-.plan .price small{font-size:.38em;font-weight:700;margin-left:4px}
-.plan .unit{color:var(--sub);font-size:15px}
-.plan .unit b{color:var(--rec);font-weight:800}
-.plan .btn{width:100%;padding:14px 20px;font-size:16px}
-.plan:not(.best) .btn{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
-.calc{margin-top:20px;padding:28px 30px;border:1px solid var(--rule);border-radius:20px;background:var(--card);display:grid;grid-template-columns:1fr auto;gap:18px 32px;align-items:center}
-.calc label{font-weight:700;font-size:17px}
-.calc label output{color:var(--rec)}
-.calc input[type=range]{width:100%;accent-color:var(--rec);margin-top:14px}
-.calc .res{text-align:right}
-.calc .res strong{display:block;font-weight:900;font-size:36px;letter-spacing:-.03em;line-height:1.1}
-.calc .res span{font-size:14px;color:var(--sub)}
-.calc .btn{grid-column:1/-1;justify-self:start}
-.notes{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--sub)}
-.notes li::before{content:"·";margin-right:6px}
-
-/* fit */
-.fit{border-top:1px solid var(--rule)}
-.fit-grid{margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.fit-grid>div{border-radius:18px;padding:30px;background:var(--card);border:1px solid var(--rule)}
-.fit-grid h3{font-size:19px;font-weight:800}
-.fit-grid ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.fit-grid li{display:grid;grid-template-columns:24px 1fr;font-size:16px}
-.fit-grid .yes li::before{content:"✓";color:var(--rec);font-weight:800}
-.fit-grid .no li::before{content:"✕";color:var(--sub);font-weight:800}
-.fit-grid .no li{color:var(--sub)}
-
-/* faq */
-.faq{border-top:1px solid var(--rule)}
-.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
-.qa{border-top:1px solid var(--ink)}
-details{border-bottom:1px solid var(--rule)}
-summary{cursor:pointer;list-style:none;padding:22px 40px 22px 0;font-weight:700;font-size:18px;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:4px;top:18px;font:400 24px var(--mono);color:var(--sub)}
-details[open] summary::after{content:"–"}
-details p{padding:0 0 22px;color:var(--sub)}
-
-/* apply */
-.apply{background:var(--inv-bg);color:var(--inv-ink)}
-.apply .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.apply .mono,.apply .lead{color:var(--inv-sub)}
-.apply-side ul{margin:32px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px}
-.apply-side li::before{content:"✓";color:var(--rec);font-weight:800;margin-right:10px}
-.apply-side .alt{margin-top:32px;font-size:14px;color:var(--inv-sub)}
-.apply-side .alt a{border-bottom:1px solid currentColor}
-form{background:var(--paper);color:var(--ink);border-radius:22px;padding:32px;display:grid;gap:18px}
-.field{display:grid;gap:7px}
-.field label{font-size:14px;font-weight:700}
-.field label i{font-style:normal;color:var(--rec);margin-left:3px}
-.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:13px 14px;width:100%}
-.field textarea{min-height:110px;resize:vertical}
-.field .hint{font-size:13px;color:var(--sub)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.check{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:14px;color:var(--sub);align-items:start}
-.check input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--rec)}
-.check b{color:var(--ink)}
-form .btn{width:100%;background:var(--rec);color:#fff;font-size:18px}
-form .btn[disabled]{opacity:.6;cursor:progress}
-.form-msg{font-size:14px;color:var(--rec);min-height:1em}
-.done{text-align:center;padding:24px 8px;display:grid;gap:12px;justify-items:center}
-.done strong{font-size:24px;font-weight:900;letter-spacing:-.03em}
-.done p{color:var(--sub)}
-.done a{border-bottom:1px solid currentColor;font-weight:700}
-
-footer{border-top:1px solid var(--rule)}
-.foot{padding-block:40px 48px;display:grid;gap:22px}
-.foot-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.foot-link{font-size:14px;color:var(--sub);border-bottom:1px solid currentColor}
-.foot-info{font-style:normal;display:grid;gap:6px;font-size:13px;color:var(--sub);line-height:1.7}
-.foot-info p{display:flex;flex-wrap:wrap;gap:2px 16px}
-.foot-info a{border-bottom:1px solid currentColor}
-.foot-copy{font-size:12px;color:var(--sub)}
-
-/* mobile sticky CTA */
-.mbar{display:none}
-
-@media (max-width:900px){
-  section{padding-block:72px}
-  .nav{display:none}
-  .top .btn{margin-left:auto}
-  .hero{padding-block:44px 28px}
-  .hero .wrap{grid-template-columns:1fr;gap:36px}
-  .phones{min-height:0}
-  .phone{width:min(150px,36%);border-radius:20px;border-width:4px}
-
-
-  .quotes,.cards,.offer-grid,.plans,.reviews,.fit-grid{grid-template-columns:1fr}
-  .vs{grid-template-columns:1fr}
-  .rare-grid{grid-template-columns:1fr}
-  .rare-grid div,.rare-grid div+div{padding:22px 0;border-left:0;border-bottom:1px solid var(--inv-rule)}
-  .stats{grid-template-columns:1fr 1fr;gap:24px 0}
-  .stat:nth-child(3){padding-left:0;border-left:0}
-  .row{grid-template-columns:96px 1fr 1fr}
-  .row>*{padding:14px 12px;font-size:14px}
-  .faq .wrap,.apply .wrap{grid-template-columns:1fr;gap:32px}
-  .calc{grid-template-columns:1fr}
-  .calc .res{text-align:left}
-  .team{grid-template-columns:1fr}
-  .cut{width:132px}
-  .two{grid-template-columns:1fr}
-  form{padding:24px}
-  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--rule);gap:10px;align-items:center;transition:transform .25s ease}
-  .mbar.hide{transform:translateY(110%)}
-  .mbar span{font-size:13px;color:var(--sub);line-height:1.35;flex:1}
-  .mbar span b{color:var(--ink)}
-  .mbar .btn{padding:13px 20px;font-size:15px;background:var(--rec);color:#fff;flex:none}
-  body{padding-bottom:76px}
-}
-@media (max-width:480px){
-  .logo span{display:none}
-  .hero h1{font-size:34px}
-  .hero .ctas .btn{width:100%}
-}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .reel{animation:none}
-  .rec::before{animation:none}
-}
-</style>
+<link rel="stylesheet" href="assets/site.css?v=20261017v34">
+<title>AD Lab · 광고 영상 소재 제작</title>
+<meta name="description" content="고성과 소재를 학습한 AI와 자사 브랜드를 함께 운영하며 쌓은 노하우로, 바로 집행해도 성과가 나는 광고 영상 소재를 가장 빠르게 만드는 AD Lab입니다.">
+<meta property="og:title" content="AD Lab · 광고 영상 소재 제작">
+<meta property="og:description" content="바로 집행해도 성과가 나는 광고 영상 소재를 가장 빠르게. 상담 후 최대한 빠르게 샘플을 보내드립니다.">
+<meta property="og:type" content="website">
 </head>
-<body>
+<body data-page="home">
+<script>document.documentElement.classList.add("js")</script>
+<div data-hd></div>
+<main>
+<div class="stagewrap">
+  <div class="stage-layer" aria-hidden="true"><div class="stage-bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="grid"></div><div class="grain"></div></div></div>
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#top">AD Lab<span>VIDEO CREATIVE</span></a>
-    <nav class="nav" aria-label="주요 메뉴">
-      <a href="#samples">샘플</a>
-      <a href="#offer">무료 3편</a>
-      <a href="#pricing">가격</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn rec-bg" href="#apply">무료 3편 받기</a>
-  </div>
-</header>
-
-<main id="top">
-
-  <!-- ① HOOK -->
-  <section class="hero">
+  <!-- 1. 히어로 -->
+  <section class="s-hero">
     <div class="wrap">
+      <span class="tag rv">AD LAB · Performance Creative</span>
+      <h1 class="h1 rv">광고 소재의 고민,<br>AD Lab과 함께면 풀립니다</h1>
+      <p class="sub rv">고성과 소재를 학습한 AI와 자사 브랜드도 함께 운영하며 쌓은 고성과 제작 노하우로,<br>바로 집행해도 성과가 나는 영상 소재를 가장 빠르게 만듭니다.</p>
+      <div class="ctas rv"><a class="btn" href="inquiry.html?type=consult">프로젝트 문의 <span class="arrow">→</span></a><a class="btn line" href="services.html">서비스 소개</a></div>
+    </div>
+    <div class="cue" aria-hidden="true"><span>SCROLL</span><i></i></div>
+  </section>
+
+  <!-- 2. 미션 -->
+  <section class="s-approach" id="approach">
+    <div class="wrap approach">
       <div>
-        <span class="mono rec">Performance Video Ads Creative</span>
-        <h1>이번 달 광고에 넣은<br>영상 소재, <em>몇 편</em>이었나요?</h1>
-        <p class="sub"><span>팔리는 소재는 플랫폼 알고리즘이 결정합니다.</span><span>소재 4편은 4번, <b>40편은 40번</b>의 기회입니다.</span><span class="ask"><b>제품 자료만 주세요. 영상 3편, 무료로 먼저 만들어 드립니다.</b></span></p>
-        <div class="ctas">
-          <a class="btn rec-bg" href="#apply">우리 제품으로 무료 3편 받기<span class="arrow">→</span></a>
-          <a class="btn ghost" href="#samples">제작 샘플 먼저 보기</a>
-        </div>
-        <div class="chips" aria-label="조건">
-          <span>계약 기간·고정비 없음</span><span>완성본 보고 결정</span><span>편당 4만 원부터</span>
-        </div>
+        <span class="tag rv">Team Mission</span>
+        <h2 class="h2 rv">보기 좋은 소재보다 먼저,<br>팔릴 이유를 찾습니다.</h2>
+        <p class="mission rv">대형 광고 플랫폼에서 성과가 검증된 영상 소재를 훅·첫 3초·장면 구성·자막·오퍼 등 요소별로 분석하고, 브랜드와 제품 카테고리별로 학습합니다. 그렇게 제작된 소재는 바로 광고를 집행해도 성과가 나올 수 있도록 만들어집니다.</p>
       </div>
-      <div class="phones" id="phones" aria-label="제작 샘플 미리보기"></div>
+      <div class="way-list rv">
+        <div class="way-title"><span>AD Lab이 소재를 만드는 방식</span><span aria-hidden="true">→</span></div>
+        <div class="way-item"><b>01</b><div><h3>고성과 소재를 분석합니다</h3><p>대형 광고 플랫폼의 고성과 영상 소재를 요소별로 분석해, 브랜드와 카테고리별로 AI에 학습시킵니다.</p></div></div>
+        <div class="way-item"><b>02</b><div><h3>가장 빠르게 만듭니다</h3><p>상담 후 최대한 빠르게, 바로 집행해도 성과가 나올 수 있는 샘플을 전달합니다. 시즌과 프로모션을 놓치지 않는 속도입니다.</p></div></div>
+        <div class="way-item"><b>03</b><div><h3>데이터로 늘려 갑니다</h3><p>샘플과 초기 소재의 반응을 확인하고, 데이터를 기반으로 성과가 나는 방향의 소재를 늘려 갑니다.</p></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- ② 샘플 -->
-  <div class="samples" id="samples" aria-label="제작 샘플">
-    <div class="reel" id="reel"></div>
-    <p class="samples-note wrap">모두 실제로 제작한 광고 영상 소재입니다. 훅·장면·톤을 소재마다 다르게 만듭니다.</p>
-  </div>
-
-  <!-- ③ STORY: 문제 -->
-  <section class="pain">
+  <!-- 3. 숫자 -->
+  <section class="s-fig" id="capability">
     <div class="wrap">
-      <span class="mono">01 · 지금 상황</span>
-      <h2 class="h2">혹시 이런 말, 듣고 계신가요?</h2>
-      <div class="quotes">
-        <div class="q"><p>이미지는 잔뜩, 영상은 몇 편</p><span>이미지는 AI로 몇 초면 나오니 많이 줍니다. 영상은 손이 많이 가니 몇 편에서 멈춥니다.</span></div>
-        <div class="q"><p>머신러닝 중이니 지켜보시죠</p><span>될 소재는 CPC와 3초 재생 비용에서 금방 티가 납니다. 지켜보는 동안 나가는 건 광고비입니다.</span></div>
-        <div class="q"><p>성과와 상관없이 매달 같은 금액</p><span>고정비 계약이면 매출이 오르든 떨어지든 대행사 수익은 같습니다. 보는 방향이 다릅니다.</span></div>
-      </div>
-      <p class="punch">광고비는 매달 나가는데, 테스트할 영상은 늘 모자랍니다.</p>
-    </div>
-  </section>
-
-  <!-- ④ STORY: 관점 전환 -->
-  <section class="insight">
-    <div class="wrap">
-      <span class="mono">02 · 왜 개수인가</span>
-      <h2 class="h2">위닝 소재는 만드는 게 아니라,<br><span class="hl">플랫폼이 고릅니다.</span></h2>
-      <p class="lead">지금 광고 플랫폼은 여러 소재 중에서 사람마다 맞는 것을 골라 보여줍니다. 어떤 소재가 터질지는 넣어보기 전엔 아무도 모릅니다.</p>
-      <div class="vs">
-        <div>
-          <span class="label">같은 광고비 · 소재 4편</span>
-          <strong>4<small>번 시도</small></strong>
-          <div class="dots" data-on="4" data-win="-1" aria-hidden="true"></div>
-        </div>
-        <div class="win">
-          <span class="label">같은 광고비 · 소재 40편</span>
-          <strong>40<small>번 시도</small></strong>
-          <div class="dots" data-on="40" data-win="17" aria-hidden="true"></div>
-        </div>
-      </div>
-      <p class="foot">단, 하는 말이 같은 소재는 화면이 달라도 하나처럼 취급되기 쉽습니다. 개수만큼 중요한 건 <b>서로 다른 훅과 장면</b>입니다.</p>
-    </div>
-  </section>
-
-  <!-- 희소성: 팔리는 소재는 드물다 -->
-  <section class="rare" aria-label="고성과 소재">
-    <div class="wrap">
-      <span class="mono rec">High-performing creative</span>
-      <h2 class="h2"><span>예쁜 소재는 흔합니다.</span><span>팔리는 소재는 드뭅니다.</span></h2>
-      <div class="rare-grid">
-        <div><h3>고성과 소재 = 팔리는 소재</h3><p>보기 좋은 영상이 아니라, 실제로 클릭되고 구매로 이어져 성과가 나는 소재입니다.</p></div>
-        <div><h3>그래서 드뭅니다</h3><p>잘 만든 소재 여러 편 중에서도 실제로 팔리는 건 몇 편뿐입니다. 어떤 게 그 한 편일지는 집행 전엔 모릅니다.</p></div>
-        <div><h3>찾는 방법은 하나</h3><p>서로 다른 훅과 장면의 영상을 충분히 넣고, 숫자가 좋은 방향으로 다시 만드는 것입니다.</p></div>
-      </div>
-      <p class="closing">드문 한 편을 찾으려면, 먼저 충분히 많이 넣어야 합니다.</p>
-    </div>
-  </section>
-
-  <!-- ⑤ 해결: 받게 되는 것 -->
-  <section class="solution">
-    <div class="wrap">
-      <span class="mono">03 · 받게 되는 것</span>
-      <h2 class="h2">그래서 대표님께 필요한 건,<br>서로 다른 영상 소재를 많이 넣는 것입니다.</h2>
-      <div class="cards">
-        <div class="card"><span class="num">20<small>편 / 일</small></span><h3>이번 주 테스트 분량을 하루 만에</h3><p>기획부터 완성본까지 하루 20편. 소재가 모자라서 테스트를 미룰 일이 없습니다.</p></div>
-        <div class="card"><span class="num">20<small>+ 훅</small></span><h3>하는 말이 다른 영상으로</h3><p>뉴스형, 대화형, 숫자형, 퀴즈형 등. 플랫폼이 서로 다른 소재로 인식하도록 훅부터 다르게 만듭니다.</p></div>
-        <div class="card"><span class="num">3<small>초</small></span><h3>숫자로 고르는 다음 소재</h3><p>CPC, 3초 재생 비용, 시청 유지율로 잘 된 훅을 찾고 그 방향으로 더 만듭니다.</p></div>
-      </div>
-      <p class="lead" style="max-width:62ch">AI는 재료만 만들고, 진짜 같은 장면만 골라 사람이 성우·자막·편집으로 완성합니다. AI 티 나는 영상은 보내지 않습니다.</p>
-      <div class="sec-cta">
-        <a class="btn" href="#apply">이 방식으로 3편 먼저 받아보기<span class="arrow">→</span></a>
-        <small>완성본을 보고 결정하셔도 됩니다.</small>
+      <div class="figs">
+        <div class="fig"><span>AD Lab에 소재를 맡긴 고객사 매출</span><strong>500억<i>+</i></strong></div>
+        <div class="fig"><span>고성과 소재를 위해 학습한 영상</span><strong>100만<i>+</i></strong></div>
+        <div class="fig"><span>함께 성과를 낸 브랜드</span><strong>300<i>+</i></strong></div>
+        <div class="fig"><span>월 고정비 · 약정 기간</span><strong>무료<i style="font-size:.34em;color:inherit;font-weight:600;margin-left:.3em">0원</i></strong></div>
       </div>
     </div>
   </section>
-
-  <!-- ⑥ 비교 -->
-  <section class="compare">
-    <div class="wrap">
-      <span class="mono">04 · 무엇이 달라지나</span>
-      <h2 class="h2">지금 방식과 나란히 놓고 보세요.</h2>
-      <div class="table" role="table" aria-label="지금 방식과 비교">
-        <div class="row" role="row"><span role="columnheader"></span><span role="columnheader">지금 (고정비 대행 · 내부 1인)</span><span role="columnheader">AD Lab에 맡기면</span></div>
-        <div class="row" role="row"><span role="rowheader">영상 소재 수</span><span>한 달에 몇 편</span><span>필요한 만큼, 하루 20편까지</span></div>
-        <div class="row" role="row"><span role="rowheader">비용 구조</span><span>성과와 무관한 월 고정비</span><span>편당 3~4만 원, 쓴 만큼만</span></div>
-        <div class="row" role="row"><span role="rowheader">다음 소재 기준</span><span>"조금 더 지켜보시죠"</span><span>CPC · 3초 재생 비용 · 유지율</span></div>
-        <div class="row" role="row"><span role="rowheader">소재 형태</span><span>이미지 위주</span><span>영상만, 720p 완성본</span></div>
-        <div class="row" role="row"><span role="rowheader">계약</span><span>기간 약정</span><span>약정 없음. 안 되면 그만</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑦ 증거: 숫자·후기 (CONFIG에서 수정) -->
-  <section class="proof">
-    <div class="wrap">
-      <span class="mono">05 · 결과</span>
-      <h2 class="h2">숫자로 확인하세요.</h2>
-      <div class="stats" id="stats"></div>
-      <div class="reviews" id="reviews"></div>
-      <div class="team">
-        <span class="badge">WHO MAKES IT</span>
-        <p><b>광고비를 직접 쓰는 팀이 만든 소재입니다.</b> 자사 브랜드를 직접 운영하며 매달 수억 원대 광고비를 집행합니다. 그래서 "예쁜가"가 아니라 "실제로 팔리는가"를 기준으로 만듭니다. 전원 삼성전자 출신 팀입니다.</p>
-        <span></span>
-        <a href="https://www.threads.com/@leo.adlab" target="_blank" rel="noopener">광고 소재 이야기, 스레드에서 매일 공개합니다 →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑧ OFFER: 무료 3편 -->
-  <section class="offer" id="offer">
-    <div class="wrap">
-      <span class="mono rec">Free 3</span>
-      <h2 class="h2">첫 3편은 대표님 제품으로,<br>무료로 만들어 드립니다.</h2>
-      <p class="lead">설명보다 완성본이 빠릅니다. 가지고 계신 자료 그대로 보내주시면 됩니다. 정리하거나 기획안을 만드실 필요 없습니다.</p>
-      <div class="offer-grid">
-        <div>
-          <h3>보내주실 것</h3>
-          <ol>
-            <li><b>01</b><span>제품 정보<small>상세페이지 링크, 패키지가 잘 보이는 제품 이미지</small></span></li>
-            <li><b>02</b><span>영상 소스<small>촬영본, 기존 광고 소재 등 가지고 계신 영상 전부</small></span></li>
-            <li><b>03</b><span>레퍼런스<small>참고하고 싶은 광고, 또는 같은 분야 상위 브랜드명</small></span></li>
-          </ol>
-        </div>
-        <div>
-          <h3>진행 순서</h3>
-          <ol>
-            <li><b>01</b><span>아래 신청서 작성</span></li>
-            <li><b>02</b><span>방향을 정리해서 연락</span></li>
-            <li><b>03</b><span>경쟁 브랜드까지 조사해 3편 제작</span></li>
-            <li><b>04</b><span>완성본 보고 결정</span></li>
-          </ol>
-        </div>
-        <div>
-          <h3>받으시는 것</h3>
-          <ul>
-            <li><b>✓</b><span>대표님 제품으로 만든 영상 소재 3편</span></li>
-            <li><b>✓</b><span>바로 집행 가능한 720p 완성본</span></li>
-            <li><b>✓</b><span>계약 의무 없음</span></li>
-            <li><b>✓</b><span>보내주신 소스는 샘플 제작 후 폐기</span></li>
-          </ul>
-        </div>
-      </div>
-      <p class="safe">지금 대행사를 쓰고 계신다면, 해지하기 전에 무료 3편부터 받아서 지금 소재와 나란히 비교해 보세요.</p>
-      <div class="sec-cta">
-        <a class="btn" href="#apply">무료 3편 신청하기<span class="arrow">→</span></a>
-        <small>신청은 1분이면 끝납니다.</small>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑨ OFFER: 가격 -->
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <span class="mono">06 · 가격</span>
-      <h2 class="h2">월 고정비 없이, <span class="hl">편당 4만 원부터.</span></h2>
-      <p class="lead">무료 3편을 보신 뒤, 필요한 만큼만 묶음으로 주문하세요. 많이 넣을수록 편당 단가가 내려갑니다.</p>
-      <div class="plans">
-        <div class="plan">
-          <h3>10편</h3>
-          <div class="price">40<small>만 원</small></div>
-          <div class="unit">편당 <b>4만 원</b></div>
-          <a class="btn" href="#apply" data-plan="10편 패키지">10편으로 신청</a>
-        </div>
-        <div class="plan best">
-          <span class="tag">추천</span>
-          <h3>20편</h3>
-          <div class="price">70<small>만 원</small></div>
-          <div class="unit">편당 <b>3.5만 원</b></div>
-          <a class="btn rec-bg" href="#apply" data-plan="20편 패키지">20편으로 신청</a>
-        </div>
-        <div class="plan">
-          <h3>40편</h3>
-          <div class="price">120<small>만 원</small></div>
-          <div class="unit">편당 <b>3만 원</b></div>
-          <a class="btn" href="#apply" data-plan="40편 패키지">40편으로 신청</a>
-        </div>
-      </div>
-      <div class="calc">
-        <div>
-          <label for="qty">한 제품에 필요한 소재 <output id="qtyOut">40편</output></label>
-          <input id="qty" type="range" min="10" max="130" step="10" value="40" aria-valuetext="40편">
-        </div>
-        <div class="res" aria-live="polite">
-          <strong id="calcPrice">120만 원</strong>
-          <span id="calcDetail">제품별 편 수 협의 가능</span>
-        </div>
-        <a class="btn" href="#apply" id="calcBtn">이 구성으로 신청하기<span class="arrow">→</span></a>
-      </div>
-      <ul class="notes">
-        <li>패키지는 제품 1개 기준 (여러 제품이면 제품별로 주문)</li>
-        <li>720p 완성본</li>
-        <li>120편 이상 대량 제작은 별도 협의</li>
-        <li>편집 원본(캡컷)은 요청 시 소정의 비용</li>
-        <li>월 고정비·계약 기간 약정 없음</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ⑩ 대상 -->
-  <section class="fit">
-    <div class="wrap">
-      <span class="mono">07 · 대상</span>
-      <h2 class="h2">이런 분께 맞습니다.</h2>
-      <div class="fit-grid">
-        <div class="yes">
-          <h3>추천드립니다</h3>
-          <ul>
-            <li>영상 광고를 이미 집행하고 있는 분</li>
-            <li>영상 소재가 늘 모자라 테스트를 못 하는 분</li>
-            <li>성과와 상관없이 나가는 대행 고정비가 아까운 분</li>
-            <li>촬영본이나 기존 광고 영상을 가지고 있는 분</li>
-          </ul>
-        </div>
-        <div class="no">
-          <h3>추천드리지 않습니다</h3>
-          <ul>
-            <li>영상 소스와 레퍼런스를 전혀 공유할 수 없는 분</li>
-            <li>이미지 소재만 필요한 분</li>
-            <li>한 패키지를 여러 제품에 나눠 쓰려는 분</li>
-            <li>소재 한두 편으로 바로 결과를 보려는 분</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑪ FAQ -->
-  <section class="faq" id="faq">
-    <div class="wrap">
-      <div>
-        <span class="mono">08 · FAQ</span>
-        <h2 class="h2">자주 묻는 질문</h2>
-      </div>
-      <div class="qa">
-        <details><summary>무료 3편을 받으면 꼭 계약해야 하나요?</summary><p>아니요. 완성본을 보신 뒤 계약 여부를 결정하시면 됩니다. 계약 기간 약정이나 월 고정비도 없습니다.</p></details>
-        <details><summary>영상 소스가 없어도 되나요?</summary><p>영상 소스와 레퍼런스는 소재 제작의 기본 재료라, 자료가 있어야 제작을 시작할 수 있습니다. 어떤 자료를 보내야 할지 막막하시면 신청서부터 작성해 주세요. 방향을 정리해서 안내드립니다.</p></details>
-        <details><summary>자료는 어떻게 보내나요?</summary><p>가지고 계신 그대로 보내주시면 됩니다. 용량이 크면 구글 드라이브 공유 링크로 보내주셔도 됩니다. 공유해 주신 소스는 샘플 제작 후 모두 폐기합니다.</p></details>
-        <details><summary>결과물은 어떤 형태로 받나요?</summary><p>모든 소재는 바로 집행 가능한 720p 완성본으로 드립니다. 편집 원본(캡컷)은 요청 시 소정의 비용으로 제공합니다.</p></details>
-        <details><summary>제품이 여러 개면 어떻게 주문하나요?</summary><p>패키지는 제품 1개 기준입니다. 10편 패키지를 A 제품 5편 + B 제품 5편으로 나눌 수는 없고, 제품별로 패키지를 각각 주문해 주시면 됩니다.</p></details>
-        <details><summary>광고 운영도 맡길 수 있나요?</summary><p>가능합니다. 다만 소재로 영업이익이 나는 구조일 때만 맡습니다. 성과가 나오지 않을 제품이라고 판단되면 처음부터 진행하지 않고, 그렇게 말씀드립니다.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑫ 신청 -->
-  <section class="apply" id="apply">
-    <div class="wrap">
-      <div class="apply-side">
-        <span class="mono rec">Apply</span>
-        <h2 class="h2">팔리는 한 편,<br>3편으로 먼저 찾아보세요.</h2>
-        <p class="lead">신청서를 보내주시면 방향을 정리해서 연락드립니다.</p>
-        <ul>
-          <li>첫 3편 무료</li>
-          <li>계약 기간·월 고정비 없음</li>
-          <li>완성본 보고 결정</li>
-          <li>공유해 주신 소스는 제작 후 폐기</li>
-        </ul>
-        <p class="alt">제출 후 스레드 <a href="https://www.threads.com/@leo.adlab" target="_blank" rel="noopener">@leo.adlab</a>으로 DM을 남겨주시면 더 빠르게 안내드립니다.<br>폼이 열리지 않으면 <a href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener">구글폼에서 직접 신청</a>하실 수 있습니다.</p>
-      </div>
-
-      <form id="applyForm" novalidate>
-        <div class="two">
-          <div class="field"><label for="f-brand">회사·브랜드명<i>*</i></label><input id="f-brand" name="brand" required autocomplete="organization" placeholder="예) 에이디랩"></div>
-          <div class="field"><label for="f-email">메일 주소<i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@brand.com"></div>
-        </div>
-        <div class="two">
-          <div class="field"><label for="f-budget">월 광고비</label>
-            <select id="f-budget" name="budget">
-              <option value="">선택해 주세요</option>
-              <option>300만 원 미만</option>
-              <option>300만 ~ 1,000만 원</option>
-              <option>1,000만 ~ 3,000만 원</option>
-              <option>3,000만 원 이상</option>
-              <option>아직 집행 전</option>
-            </select>
-          </div>
-          <div class="field"><label for="f-phone">연락처</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000"></div>
-        </div>
-        <div class="field"><label for="f-link">제품 상세페이지 링크<i>*</i></label><input id="f-link" name="link" required inputmode="url" placeholder="https://"></div>
-        <div class="field"><label for="f-comp">대표 경쟁사</label><input id="f-comp" name="comp" placeholder="업계 1위, 주요 경쟁 브랜드"></div>
-        <div class="field"><label for="f-msg">지금 상황·고민</label><textarea id="f-msg" name="msg" placeholder="예) 영상 소재가 몇 편뿐이라 테스트를 못 하고 있어요. / 대행사 고정비 대비 성과가 아쉬워요."></textarea></div>
-        <label class="check"><input type="checkbox" id="f-src" name="src" required><span><b>샘플 제작용 소스(기존 소재, 제품 이미지 등) 공유가 가능합니다.</b> 소스는 샘플 제작 후 모두 폐기합니다.</span></label>
-        <label class="check"><input type="checkbox" id="f-agree" required><span>입력하신 정보를 상담 안내 목적으로 수집·이용하는 데 동의합니다.</span></label>
-        <p class="form-msg" id="formMsg" role="alert"></p>
-        <button class="btn" type="submit" id="submitBtn">무료 3편 신청하기<span class="arrow">→</span></button>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <div class="foot-top">
-      <a class="logo" href="#top">AD Lab</a>
-      <a class="foot-link" href="https://www.threads.com/@leo.adlab" target="_blank" rel="noopener">Threads @leo.adlab</a>
-    </div>
-    <address class="foot-info">
-      <p><span>상호명 : 주식회사 어베일</span><span>대표 : HyokyungWoo</span></p>
-      <p><span>주소 : 서울 강남구 테헤란로82길 15 40호</span></p>
-      <p><span>사업자등록번호 : 531-88-03606</span><span>통신판매업신고 : 2026-서울강남-00614</span></p>
-      <p><span>개인정보보호책임자 : HyokyungWoo</span></p>
-    </address>
-    <p class="foot-copy">© AD Lab. All rights reserved.</p>
-  </div>
-</footer>
-
-<div class="mbar" id="mbar">
-  <span><b>첫 3편 무료</b><br>편당 4만 원부터 · 약정 없음</span>
-  <a class="btn" href="#apply">무료 3편 받기</a>
 </div>
 
-<script>
-/* ============================================================
-   수정은 여기서만 하면 됩니다.
-   ============================================================ */
-var CONFIG = {
-  // 샘플: 영상이 생기면 video에 경로를 넣으세요. 비어 있으면 poster 이미지가 보입니다.
-  // 예) { poster:'ads/ad01.webp', video:'samples/01.mp4' }
-  samples: (function(){
-    var a=[]; for(var i=1;i<=16;i++){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); } return a;
-  })(),
-  hot: [0,5,10],          // 빨간 라벨로 강조할 샘플 순서(0부터)
-  version: '20261017a',   // 이미지·영상을 바꾸면 값 변경(캐시 갱신)
+<!-- 4. 고객사 -->
+<section class="s-clients" id="clients">
+  <div class="wrap">
+    <span class="tag rv">Our Client</span>
+    <h2 class="h2 rv">함께 성과를 경험한<br><em><span data-count-to="clients">0</span>+ 브랜드</em></h2>
+    <p class="lead rv">건강, 뷰티, 리빙 등 다양한 카테고리에서 AD Lab의 소재로 광고를 집행하고 있습니다.</p>
+  </div>
+  <div class="reel-rows rv" aria-label="AD Lab이 제작한 영상 소재">
+    <div class="reel-row" data-reel-row="fwd"></div>
+    <div class="reel-row rev" data-reel-row="rev"></div>
+  </div>
+</section>
 
-  // 숫자: value만 바꾸면 됩니다.
-  stats: [
-    { value: 0, unit: '편',   label: '누적 제작 소재' },
-    { value: 0, unit: '곳',   label: '함께한 브랜드' },
-    { value: 0, unit: '%',    label: '평균 CTR 개선' },
-    { value: 0, unit: '%',    label: '평균 CPA 절감' }
-  ],
+<!-- 5. 매체 -->
+<section class="s-dark" id="media">
+  <div class="wrap">
+    <span class="tag rv">Our Data</span>
+    <h2 class="h2 rv">대형 광고 플랫폼의<br>고성과 소재를 학습합니다.</h2>
+    <div class="media-grid four rv">
+      <div><span class="n">01</span><h3>Google</h3><p>유튜브·구글 광고에서 성과가 검증된 영상 소재를 훅·장면·자막·오퍼 등 요소별로 분석합니다.</p></div>
+      <div><span class="n">02</span><h3>Naver</h3><p>네이버 광고에서 반응이 좋은 소재의 메시지와 구성을 요소별로 분석합니다.</p></div>
+      <div><span class="n">03</span><h3>Meta</h3><p>인스타그램·페이스북의 고성과 영상 소재를 첫 3초와 전개 방식까지 요소별로 분석합니다.</p></div>
+      <div><span class="n">04</span><h3>Coupang</h3><p>쿠팡 광고에서 구매로 이어진 소재의 구성과 오퍼를 요소별로 분석합니다.</p></div>
+    </div>
+  </div>
+</section>
 
-  // 후기: metric 숫자와 문구를 실제 내용으로 바꿔 주세요.
-  reviews: [
-    { value: 0, unit: '%', metric: 'ROAS 상승', quote: '후기 문구가 들어갈 자리입니다.', who: '업종 · 브랜드명' },
-    { value: 0, unit: '%', metric: 'CPA 절감',  quote: '후기 문구가 들어갈 자리입니다.', who: '업종 · 브랜드명' },
-    { value: 0, unit: '%', metric: 'CTR 상승',  quote: '후기 문구가 들어갈 자리입니다.', who: '업종 · 브랜드명' }
-  ],
+<!-- 6. 소식 -->
+<section class="s-news" id="news">
+  <div class="wrap">
+    <div class="head rv"><div><span class="tag">AD Lab News</span><h2 class="h2">AD Lab의 최근 소식</h2></div><a class="more" href="blog/index.html">칼럼 전체 보기 <span aria-hidden="true">→</span></a></div>
+    <div class="news-grid">
+      <a class="ncard pic rv" href="blog/high-performing-creative.html"><img src="blog/img/element.jpg" alt="" loading="lazy"><div class="ov"><span class="cat">CREATIVE</span><h3>고성과 소재는 무엇이 다른가: 요소별로 뜯어보는 법</h3><time>2026.10.17</time></div><span class="go" aria-hidden="true">↗</span></a>
+      <a class="ncard pic rv" href="blog/season-speed.html"><img src="blog/img/season.jpg" alt="" loading="lazy"><div class="ov"><span class="cat">OPERATION</span><h3>시즌 광고, 소재가 늦으면 생기는 일</h3><time>2026.10.17</time></div><span class="go" aria-hidden="true">↗</span></a>
+      <a class="ncard pic rv" href="blog/how-many-creatives.html"><img src="blog/img/test.jpg" alt="" loading="lazy"><div class="ov"><span class="cat">TEST</span><h3>소재 테스트, 몇 편부터 시작해야 할까</h3><time>2026.10.17</time></div><span class="go" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
 
-  // 구글폼 연결 (adlab 샘플 신청 폼)
-  form: {
-    action: 'https://docs.google.com/forms/d/e/1FAIpQLScRPFne5fR_QwpdZlgKgi9wSbynjq6N6eXRBKxiMLSqJ_mmvA/formResponse',
-    brand: 'entry.1153514200',
-    email: 'entry.702122024',
-    budget:'entry.1427919395',
-    link:  'entry.243143260',
-    comp:  'entry.20149227',
-    msg:   'entry.409032645',
-    src:   'entry.905965731', srcValue: '제공 가능'
-  }
-};
-
-(function(){
-  var V = CONFIG.version;
-  function el(tag, cls){ var e=document.createElement(tag); if(cls) e.className=cls; return e; }
-  function media(s, i){
-    var m = el('div','media');
-    if (s.video){
-      var v = el('video');
-      v.src = s.video+'?v='+V; v.poster = s.poster+'?v='+V;
-      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
-      v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.preload='metadata';
-      v.setAttribute('aria-label','광고 소재 '+(i+1)+'번');
-      m.appendChild(v);
-    } else {
-      var bg = el('img','bg'); bg.src = s.poster+'?v='+V; bg.alt=''; bg.loading='lazy';
-      var fg = el('img','fg'); fg.src = s.poster+'?v='+V; fg.alt='광고 소재 '+(i+1)+'번'; fg.loading='lazy';
-      m.appendChild(bg); m.appendChild(fg);
-    }
-    return m;
-  }
-
-  // 히어로 휴대폰 3대
-  var phones = document.getElementById('phones');
-  [0,1,2].forEach(function(idx){
-    var s = CONFIG.samples[idx]; if(!s) return;
-    var p = el('div','phone'); p.appendChild(media(s, idx));
-    var ui = el('div','ui');
-    ui.innerHTML = '<div class="who"><i></i>브랜드명 <small>· 광고</small></div><div class="shop"><span>자세히 보기</span><span>›</span></div>';
-    p.appendChild(ui); phones.appendChild(p);
-  });
-
-  // 샘플 띠 (무한 롤링용 2벌)
-  var reel = document.getElementById('reel');
-  for (var d=0; d<2; d++){
-    CONFIG.samples.forEach(function(s, i){
-      var c = el('div','cut'+(CONFIG.hot.indexOf(i)>-1?' hot':''));
-      var m = media(s, i);
-      if (d===1){ c.setAttribute('aria-hidden','true'); }
-      var b = el('b'); b.textContent = 'AD '+String(i+1).padStart(2,'0');
-      c.appendChild(m); c.appendChild(b); reel.appendChild(c);
-    });
-  }
-
-  // 4 vs 40 점
-  document.querySelectorAll('.dots').forEach(function(box){
-    var on = +box.dataset.on, win = +box.dataset.win;
-    for (var i=0;i<40;i++){ var dot=el('i', i===win?'win':(i<on?'on':'')); box.appendChild(dot); }
-  });
-
-  // 숫자
-  var stats = document.getElementById('stats');
-  CONFIG.stats.forEach(function(s){
-    var d = el('div','stat');
-    d.innerHTML = '<strong><span data-count="'+s.value+'">0</span><small>'+s.unit+'</small></strong><span></span>';
-    d.lastChild.textContent = s.label; stats.appendChild(d);
-  });
-  var reviews = document.getElementById('reviews');
-  CONFIG.reviews.forEach(function(r){
-    var d = el('div','review');
-    d.innerHTML = '<div class="metric"><strong><span data-count="'+r.value+'">0</span>'+r.unit+'</strong><span></span></div><p></p><span class="who"></span>';
-    d.querySelector('.metric>span').textContent = r.metric;
-    d.querySelector('p').textContent = '“'+r.quote+'”';
-    d.querySelector('.who').textContent = r.who;
-    reviews.appendChild(d);
-  });
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function countUp(node){
-    var to = +node.dataset.count; if (!to || reduce){ node.textContent = to.toLocaleString('ko-KR'); return; }
-    var t0 = null;
-    function step(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/1200); node.textContent = Math.round(to*(1-Math.pow(1-k,3))).toLocaleString('ko-KR'); if(k<1) requestAnimationFrame(step); }
-    requestAnimationFrame(step);
-  }
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); io.unobserve(e.target); } }); }, {threshold:.5});
-    document.querySelectorAll('[data-count]').forEach(function(n){ io.observe(n); });
-  } else { document.querySelectorAll('[data-count]').forEach(countUp); }
-
-  // 가격 계산 (10/20/40편 묶음 중 가장 싼 조합)
-  var PKG = [{n:40,p:120},{n:20,p:70},{n:10,p:40}];
-  function best(q){
-    var memo={0:{p:0,list:[]}};
-    for (var x=10;x<=q;x+=10){
-      var b=null;
-      PKG.forEach(function(k){ if(k.n<=x){ var prev=memo[x-k.n]; var c=prev.p+k.p; if(!b||c<b.p){ b={p:c,list:prev.list.concat(k.n)}; } } });
-      memo[x]=b;
-    }
-    return memo[q];
-  }
-  var qty=document.getElementById('qty'), out=document.getElementById('qtyOut'), cp=document.getElementById('calcPrice'), cd=document.getElementById('calcDetail'), cb=document.getElementById('calcBtn');
-  var MAXQ=120; // 슬라이더 끝(130)은 "120편+ 협의"
-  function calc(){
-    var q=+qty.value;
-    if (q>MAXQ){
-      out.textContent=MAXQ+'편+'; qty.setAttribute('aria-valuetext',MAXQ+'편 이상');
-      cp.textContent='별도 협의'; cd.textContent='대량 제작은 물량·일정에 맞춰 따로 안내드립니다';
-      cb.dataset.plan=MAXQ+'편 이상 (별도 협의)'; return;
-    }
-    var r=best(q), cnt={};
-    r.list.forEach(function(n){ cnt[n]=(cnt[n]||0)+1; });
-    var parts=Object.keys(cnt).sort(function(a,b){return b-a;}).map(function(n){ return n+'편 '+cnt[n]+'개'; });
-    var unit=Math.round(r.p/q*10)/10;
-    out.textContent=q+'편'; qty.setAttribute('aria-valuetext',q+'편'); cp.textContent=r.p.toLocaleString('ko-KR')+'만 원';
-    cd.textContent='제품별 편 수 협의 가능';
-    cb.dataset.plan=q+'편 ('+parts.join(' + ')+', '+r.p+'만 원)';
-  }
-  qty.addEventListener('input', calc); calc();
-
-  // 가격 버튼 → 신청서 고민란에 희망 구성 미리 채우기
-  var msg=document.getElementById('f-msg');
-  document.querySelectorAll('[data-plan]').forEach(function(a){
-    a.addEventListener('click', function(){
-      var line='희망 구성: '+a.dataset.plan;
-      msg.value = msg.value.replace(/^희망 구성: .*\n?/,'');
-      msg.value = line+(msg.value?'\n'+msg.value:'');
-    });
-  });
-
-  // 신청 폼 → 구글폼으로 전송
-  var form=document.getElementById('applyForm'), fm=document.getElementById('formMsg'), btn=document.getElementById('submitBtn');
-  form.addEventListener('submit', function(ev){
-    ev.preventDefault(); fm.textContent='';
-    var bad=[].slice.call(form.querySelectorAll('[required]')).filter(function(i){ return i.type==='checkbox'?!i.checked:!i.value.trim(); });
-    var email=form.email.value.trim();
-    if (bad.length){ fm.textContent='필수 항목(*)과 체크 항목을 확인해 주세요.'; bad[0].focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ fm.textContent='메일 주소 형식을 확인해 주세요.'; form.email.focus(); return; }
-    var F=CONFIG.form, body=new URLSearchParams();
-    var note=form.msg.value.trim(), phone=form.phone.value.trim();
-    if (phone) note = '연락처: '+phone+(note?'\n'+note:'');
-    body.append(F.brand, form.brand.value.trim());
-    body.append(F.email, email);
-    body.append(F.budget, form.budget.value);
-    body.append(F.link, form.link.value.trim());
-    body.append(F.comp, form.comp.value.trim());
-    body.append(F.msg, note);
-    body.append(F.src, F.srcValue);
-    btn.disabled=true; btn.firstChild.textContent='보내는 중… ';
-    fetch(F.action, {method:'POST', mode:'no-cors', body:body})
-      .then(function(){
-        form.innerHTML='<div class="done"><strong>신청이 접수되었습니다.</strong><p>방향을 정리해서 연락드리겠습니다.<br>스레드로 DM을 남겨주시면 더 빠르게 안내드립니다.</p><a href="https://www.threads.com/@leo.adlab" target="_blank" rel="noopener">스레드 @leo.adlab 열기 →</a></div>';
-      })
-      .catch(function(){
-        btn.disabled=false; btn.firstChild.textContent='무료 3편 신청하기';
-        fm.innerHTML='전송에 실패했습니다. <a href="https://forms.gle/hiVqT1a8VHmTjyti8" target="_blank" rel="noopener" style="text-decoration:underline">구글폼에서 직접 신청</a>해 주세요.';
-      });
-  });
-
-  // 모바일 하단 바: 신청 섹션에선 숨김
-  var mbar=document.getElementById('mbar'), apply=document.getElementById('apply');
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){ mbar.classList.toggle('hide', es[0].isIntersecting); }, {threshold:.15}).observe(apply);
-  }
-})();
-</script>
+<!-- 7. 마무리 -->
+<section class="s-cta">
+  <div class="wrap">
+    <span class="tag rv">Contact</span>
+    <h2 class="h2 rv">한 편의 소재를 넘어,<br>계속 팔리는 브랜드의 기준으로.</h2>
+    <div class="ctas rv"><a class="btn red" href="inquiry.html?type=consult">프로젝트 문의 <span class="arrow">→</span></a><a class="btn line" href="about.html">회사소개</a></div>
+    <p class="small rv">브랜드의 다음 성장은 소재에서 시작됩니다. AD Lab이 팔리는 기준을 함께 만들겠습니다.</p>
+  </div>
+</section>
+</main>
+<div data-ft></div>
+<script src="assets/site.js?v=20261017v34"></script>
 </body>
 </html>
