@@ -261,3 +261,6 @@ var CONFIG = {
     function upd(){ var r=big.getBoundingClientRect(),vh=innerHeight; var p=(vh*.8-r.top)/(r.height+vh*.2); p=Math.max(0,Math.min(1,p)); var n=Math.round(p*ls.length); ls.forEach(function(x,i){x.classList.toggle('on',i<n);}); }
     addEventListener('scroll',upd,{passive:true}); upd(); }
 })();
+
+(function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat]'));
+  tb.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(tb.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); ps.forEach(function(p){ p.classList.toggle('hide', f!=='all' && p.getAttribute('data-cat')!==f); }); }); })();

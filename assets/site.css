@@ -654,3 +654,9 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 @media (max-width:600px){.ab-why{grid-template-columns:1fr}}
 
 .ab-belief{padding-bottom:130px}
+
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.tabs button{font:inherit;font-size:15px;font-weight:600;letter-spacing:-.02em;padding:11px 22px;border-radius:999px;border:1px solid #d8d6d2;background:#fff;color:#444;cursor:pointer;transition:all .25s}
+.tabs button:hover{border-color:#111;color:#111}
+.tabs button.on{background:#111;border-color:#111;color:#fff}
+.post.pic.hide{display:none}
