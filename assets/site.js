@@ -48,7 +48,7 @@ var CONFIG = {
         '<a href="'+root+'portfolio.html"'+cur('portfolio')+'>레퍼런스</a>'+
         '<a href="'+root+'careers.html"'+cur('careers')+'>채용</a>'+
       '</nav>'+
-      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=consult">프로젝트 문의</a></div>'+
+      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=consult">제작 문의</a></div>'+
     '</div></header>';
   }
 
@@ -64,7 +64,7 @@ var CONFIG = {
         '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">운영 사례</a></div>'+
         '<div><b>SNS</b><a href="'+CONFIG.threads+'" target="_blank" rel="noopener">Threads</a></div>'+
       '</div></div>'+
-      '<div class="ft-bottom"><div class="ft-links"><a href="'+root+'inquiry.html?type=consult">프로젝트 문의 <span>↗</span></a><a href="'+root+'services.html">서비스 소개 <span>↗</span></a></div><div class="ft-mark" aria-hidden="true">AD Lab</div></div>'+
+      '<div class="ft-bottom"><div class="ft-links"><a href="'+root+'inquiry.html?type=consult">제작 문의 <span>↗</span></a><a href="'+root+'services.html">서비스 소개 <span>↗</span></a></div><div class="ft-mark" aria-hidden="true">AD Lab</div></div>'+
       '<address><p><span>대표 : HyokyungWoo</span><span>주소 : 서울 강남구 테헤란로82길 15 40호</span></p>'+
       '<p><span>사업자등록번호 : 531-88-03606</span><span>통신판매업신고 : 2026-서울강남-00614</span><span>개인정보보호책임자 : HyokyungWoo</span></p></address>'+
       '<p class="copy">© AD Lab. All rights reserved.</p>'+
