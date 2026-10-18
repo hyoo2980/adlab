@@ -669,3 +669,13 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .legal p,.legal li{font-size:15.5px;line-height:1.85;color:#444;word-break:keep-all}
 .legal ul{padding-left:20px;display:grid;gap:6px;margin:10px 0}
 .legal b{color:#111}
+
+.pv{position:fixed;inset:0;z-index:200;background:rgba(10,10,14,.55);display:flex;align-items:center;justify-content:center;padding:24px}
+.pv[hidden]{display:none}
+.pv-box{position:relative;background:#fff;border-radius:20px;width:min(760px,100%);max-height:86vh;display:flex;box-shadow:0 40px 100px -30px rgba(0,0,0,.5)}
+.pv-body{padding:44px 44px 40px;overflow:auto;max-height:86vh;border-radius:20px}
+.pv-x{position:absolute;right:14px;top:10px;width:40px;height:40px;border:0;background:none;font-size:30px;line-height:1;cursor:pointer;color:#555;z-index:2}
+.pv-t{font-size:26px!important;margin:0 0 14px!important}
+.pv-lead{margin:0 0 6px}
+.pv-lock{overflow:hidden}
+@media (max-width:600px){.pv-body{padding:36px 22px 28px}}
