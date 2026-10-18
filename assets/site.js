@@ -17,7 +17,7 @@ var CONFIG = {
   // 장면 배경: 이미지(png/jpg)나 영상(mp4)을 media 폴더에 넣고 경로만 바꾸면 됩니다.
   // 장면 배경: media 폴더의 jpg를 mp4로 바꾸면 영상으로 재생됩니다.
   shots: { hero:'media/hero.mp4', approach:'media/approach.mp4', capability:'media/numbers.mp4', cta:'media/cta.mp4' },
-  clients: 300,           // 함께한 브랜드 수 (숫자만 바꾸면 됩니다)
+  clients: 180,           // 함께한 브랜드 수 (숫자만 바꾸면 됩니다)
   version: '20261017clay3'
 };
 
@@ -56,7 +56,7 @@ var CONFIG = {
   var ft = document.querySelector('[data-ft]');
   if (ft){
     ft.outerHTML = '<footer class="ft"><div class="wrap">'+
-      '<div class="ft-grid"><div><a class="logo" href="'+(root||'./')+'">AD Lab</a><p class="small" style="margin-top:14px">광고 영상 소재 제작</p></div>'+
+      '<div class="ft-grid"><div><a class="logo" href="'+(root||'./')+'">AD Lab</a><p class="small" style="margin-top:14px">Video Ad Creative Production</p></div>'+
       '<div class="ft-cols">'+
         '<div><b>회사소개</b><a href="'+root+'about.html">회사소개</a><a href="'+root+'careers.html">채용</a></div>'+
         '<div><b>서비스</b><a href="'+root+'services.html#creative">광고 소재 제작</a></div>'+
@@ -200,9 +200,9 @@ var CONFIG = {
   var svh=document.getElementById('svHero');
   if (svh){
     var phases=[
-      {n:500, u:'억+', l:'AD Lab에 소재를 맡긴 고객사 매출', tiles:[0,1,2,3,4,5,6,7]},
+      {n:2640, u:'억', l:'고객사 매출(2025년 기준)', tiles:[0,1,2,3,4,5,6,7]},
       {n:100, u:'만+', l:'고성과 소재를 위해 학습한 영상', tiles:[8,9,10,11,12,13,14,15]},
-      {n:300, u:'+', l:'함께 성과를 낸 브랜드', tiles:[2,5,8,11,14,1,4,7]}
+      {n:180, u:'+', l:'함께 성과를 낸 브랜드', tiles:[2,5,8,11,14,1,4,7]}
     ];
     var grid=document.getElementById('svGrid'), numEl=document.getElementById('svNum'), unitEl=document.getElementById('svUnit'), labEl=document.getElementById('svLabel'), dots=[].slice.call(document.querySelectorAll('#svDots li'));
     var tiles=[]; var N=CONFIG.samples.length;
@@ -213,7 +213,7 @@ var CONFIG = {
       col.appendChild(track); grid.appendChild(col);
     }
     var cur=-1, raf=null, shown=0, reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function setNum(to){ if(reduce){ numEl.textContent=to; shown=to; return; } var from=shown, t0=null; cancelAnimationFrame(raf); (function step(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/700); shown=Math.round(from+(to-from)*(1-Math.pow(1-k,3))); numEl.textContent=shown; if(k<1) raf=requestAnimationFrame(step); })(performance.now()); }
+    function setNum(to){ if(reduce){ numEl.textContent=to.toLocaleString('ko-KR'); shown=to; return; } var from=shown, t0=null; cancelAnimationFrame(raf); (function step(t){ if(!t0) t0=t; var k=Math.min(1,(t-t0)/700); shown=Math.round(from+(to-from)*(1-Math.pow(1-k,3))); numEl.textContent=shown.toLocaleString('ko-KR'); if(k<1) raf=requestAnimationFrame(step); })(performance.now()); }
     function apply(i){ if(i===cur) return; cur=i; var ph=phases[i]; setNum(ph.n); unitEl.textContent=ph.u; labEl.textContent=ph.l; dots.forEach(function(d,k){ d.classList.toggle('on',k===i); }); }
     function onScroll(){ var r=svh.getBoundingClientRect(), total=svh.offsetHeight-window.innerHeight, p=Math.min(.999,Math.max(0,-r.top/Math.max(1,total))); apply(Math.min(phases.length-1, Math.floor(p*phases.length))); }
     onScroll(); window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll);
@@ -254,7 +254,7 @@ var CONFIG = {
   var h=document.querySelector('[data-words]');
   if(h){ var t=h.textContent.trim().split(' '); h.innerHTML=t.map(function(w,i){return '<span class="w"><span style="--i:'+i+'">'+w+'</span></span>';}).join(' '); setTimeout(function(){h.classList.add('on');},200); }
   var cs=[].slice.call(document.querySelectorAll('[data-ab-count]'));
-  function run(el){ var to=+el.getAttribute('data-ab-count'),t0=null; (function f(ts){ t0=t0||ts; var p=Math.min((ts-t0)/1600,1); el.textContent=Math.round(to*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(f); })(performance.now()); }
+  function run(el){ var to=+el.getAttribute('data-ab-count'),t0=null; (function f(ts){ t0=t0||ts; var p=Math.min((ts-t0)/1600,1); el.textContent=Math.round(to*(1-Math.pow(1-p,3))).toLocaleString('ko-KR'); if(p<1) requestAnimationFrame(f); })(performance.now()); }
   if(cs.length&&'IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} });},{threshold:.4}); cs.forEach(function(c){io.observe(c);}); } else cs.forEach(function(c){c.textContent=c.getAttribute('data-ab-count');});
   var big=document.querySelector('[data-lit]');
   if(big){ big.innerHTML=big.textContent.trim().split(' ').map(function(w){return '<span class="l">'+w+'</span>';}).join(' '); var ls=[].slice.call(big.querySelectorAll('.l'));
