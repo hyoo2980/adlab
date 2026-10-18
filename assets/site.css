@@ -660,3 +660,12 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .tabs button:hover{border-color:#111;color:#111}
 .tabs button.on{background:#111;border-color:#111;color:#fff}
 .post.pic.hide{display:none}
+
+.ft .copy{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;margin-top:56px;padding-top:26px;border-top:1px solid var(--ink);font-size:13px;color:var(--ink)}
+.ft .copy a{color:var(--mute)}
+.ft .copy a:hover{color:var(--ink)}
+.legal{max-width:820px}
+.legal h2{font-size:21px;font-weight:700;letter-spacing:-.03em;margin:48px 0 14px}
+.legal p,.legal li{font-size:15.5px;line-height:1.85;color:#444;word-break:keep-all}
+.legal ul{padding-left:20px;display:grid;gap:6px;margin:10px 0}
+.legal b{color:#111}
