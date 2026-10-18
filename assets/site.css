@@ -661,6 +661,24 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .tabs button.on{background:#111;border-color:#111;color:#fff}
 .post.pic.hide{display:none}
 
+.pf-sum{padding:70px 0 20px;background:#fff}
+.pf-wall{padding:100px 0}
+.wall{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.wall img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;filter:blur(6px) saturate(.9);transition:transform .5s,filter .5s}
+.wall img:hover{transform:translateY(-6px);filter:none}
+@media (max-width:900px){.wall{grid-template-columns:repeat(3,1fr)}}
+
+.case .big{color:#ff3b22}
+.case .subs span{font-weight:600}
+.case .basis::before{content:"예시";display:inline-block;margin-right:8px;padding:2px 8px;border-radius:999px;background:#111;color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em}
+.pf-demo{margin:0 0 28px;padding:14px 18px;border-radius:12px;background:#fff3f0;color:#c2321f;font-size:14px;font-weight:600}
+
+.case .thumb img{filter:none;transform:none;opacity:1}
+.case .thumb span{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.case .thumb{transition:transform .6s}
+.case .thumb img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.case:hover .thumb img{transform:scale(1.05)}
+
 .ft .copy{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;margin-top:56px;padding-top:26px;border-top:1px solid var(--ink);font-size:13px;color:var(--ink)}
 .ft .copy a{color:var(--mute)}
 .ft .copy a:hover{color:var(--ink)}

@@ -8,11 +8,12 @@ var CONFIG = {
   samples: (function(){ var a=[]; for(var i=1;i<=16;i++){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); } return a; })(),
   // 포트폴리오 (진짜마케팅 형식). 숫자·문구는 실제 값으로 교체
   cases: [
-    { brand:'알파셀', cat:'건강 · 웰니스', title:'결론 한 줄을 입력하세요', big:'0%', bigLabel:'대표 지표 (예: 구매 ROAS)', subs:['CTR 0%','CPA 0원','소재 0편'], desc:'어떤 소재 방향이 이겼는지, 무엇을 바꿨는지 2~3문장으로 적습니다.', basis:'집계 기준: 매체 · 기간 · 집계 범위', img:'ads/ad03.webp' },
-    { brand:'헥사큐', cat:'카테고리', title:'결론 한 줄을 입력하세요', big:'0%', bigLabel:'대표 지표', subs:['지표 0','지표 0'], desc:'어떤 소재 방향이 이겼는지, 무엇을 바꿨는지 2~3문장으로 적습니다.', basis:'집계 기준: 매체 · 기간 · 집계 범위', img:'ads/ad07.webp' },
-    { brand:'플루', cat:'카테고리', title:'결론 한 줄을 입력하세요', big:'0건', bigLabel:'대표 지표', subs:['지표 0','지표 0'], desc:'어떤 소재 방향이 이겼는지, 무엇을 바꿨는지 2~3문장으로 적습니다.', basis:'집계 기준: 매체 · 기간 · 집계 범위', img:'ads/ad11.webp' },
-    { brand:'잉코', cat:'카테고리', title:'결론 한 줄을 입력하세요', big:'0원', bigLabel:'대표 지표', subs:['지표 0','지표 0'], desc:'어떤 소재 방향이 이겼는지, 무엇을 바꿨는지 2~3문장으로 적습니다.', basis:'집계 기준: 매체 · 기간 · 집계 범위', img:'ads/ad05.webp' },
-    { brand:'글리너', cat:'카테고리', title:'결론 한 줄을 입력하세요', big:'0%', bigLabel:'대표 지표', subs:['지표 0','지표 0'], desc:'어떤 소재 방향이 이겼는지, 무엇을 바꿨는지 2~3문장으로 적습니다.', basis:'집계 기준: 매체 · 기간 · 집계 범위', img:'ads/ad14.webp' }
+    { brand:'건강기능식품 A', cat:'건강 · 웰니스', title:'후기형 소재로 구매 전환 개선', big:'324.6%', bigLabel:'Meta 구매 ROAS', subs:['CTR 3.4%','CPA ↓31%','소재 48편'], desc:'첫 3초 후킹과 체험 후기형 구성을 비교해 반응이 좋은 방향의 소재를 늘렸습니다.', basis:'집계 기준: Meta · 최근 3개월 · 구매 전환 기준', img:'cases/health.jpg' },
+    { brand:'뷰티 A', cat:'뷰티', title:'신제품 런칭 구간 구매 효율', big:'243.4%', bigLabel:'Meta 구매 ROAS', subs:['CTR 4.1%','구매 1,280건','소재 36편'], desc:'사용 전후 장면을 앞에 둔 소재가 가장 높은 구매 효율을 기록했습니다.', basis:'집계 기준: Meta · 런칭 후 6주 · 구매 전환 기준', img:'cases/beauty.jpg' },
+    { brand:'리빙 A', cat:'리빙', title:'시즌 프로모션에 맞춘 빠른 제작', big:'1,920건', bigLabel:'구매 이벤트 · 4주 합계', subs:['ROAS 304.5%','CPA ↓27%','소재 60편'], desc:'시즌 4주 전 소재 세트를 먼저 집행하고, 반응이 좋은 방향으로 소재를 추가했습니다.', basis:'집계 기준: Meta · 시즌 4주 · 구매 이벤트 기준', img:'cases/living.jpg' },
+    { brand:'식품 A', cat:'식품', title:'구성별 구매 이유를 나눈 소재', big:'2.7배', bigLabel:'광고비 대비 매출', subs:['ROAS 274.3%','구매 2,430건','소재 44편'], desc:'식사량·구성·가격 중 무엇이 구매 이유인지 소재로 나눠 확인했습니다.', basis:'집계 기준: Meta · 최근 2개월 · 광고 기여 매출', img:'cases/food.jpg' },
+    { brand:'패션 A', cat:'패션', title:'착용 장면 중심 소재로 효율 개선', big:'↓ 38.5%', bigLabel:'구매당 비용(CPA)', subs:['ROAS 256.6%','CTR 3.1%','소재 52편'], desc:'착용 장면과 사이즈 정보를 앞에 둔 소재가 비교 구간 대비 구매당 비용을 낮췄습니다.', basis:'집계 기준: Meta · 비교 구간 대비 · 구매 전환 기준', img:'cases/fashion.jpg' },
+    { brand:'생활소비재 A', cat:'생활소비재', title:'반복 구매를 부른 사용 장면', big:'5,310건', bigLabel:'구매 이벤트 · 3개월 합계', subs:['ROAS 233.3%','재구매율 +12%','소재 80편'], desc:'사용 장면과 오퍼를 조합한 소재를 다양하게 테스트해 반응이 좋은 조합을 늘렸습니다.', basis:'집계 기준: Meta · 최근 3개월 · 구매 이벤트 기준', img:'cases/goods.jpg' }
   ],
   // 장면 배경: 이미지(png/jpg)나 영상(mp4)을 media 폴더에 넣고 경로만 바꾸면 됩니다.
   // 장면 배경: media 폴더의 jpg를 mp4로 바꾸면 영상으로 재생됩니다.
@@ -271,3 +272,7 @@ var CONFIG = {
 
 (function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat]'));
   tb.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(tb.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); ps.forEach(function(p){ p.classList.toggle('hide', f!=='all' && p.getAttribute('data-cat')!==f); }); }); })();
+
+(function(){ var w=document.querySelector('[data-wall]'); if(w){ var h=''; for(var r=0;r<3;r++) for(var i=1;i<=16;i++){ var n=(i<10?'0':'')+i; if(r*16+i>20) break; h+='<img src="ads/ad'+n+'.webp" alt="" loading="lazy">'; } w.innerHTML=h; }
+  var t=document.getElementById('pfTabs'); if(!t) return;
+  t.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(t.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); [].forEach.call(document.querySelectorAll('.case'),function(c){ var m=c.querySelector('.meta'); var cat=m?m.textContent:''; c.style.display=(f==='all'||cat.indexOf(f)>-1)?'':'none'; }); }); })();
