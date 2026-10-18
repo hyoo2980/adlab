@@ -60,7 +60,7 @@ var CONFIG = {
       '<div class="ft-grid"><div><a class="logo" href="'+(root||'./')+'">AD Lab</a><p class="small" style="margin-top:14px">Video Ad Creative Production</p></div>'+
       '<div class="ft-cols">'+
         '<div><b>회사소개</b><a href="'+root+'about.html">회사소개</a><a href="'+root+'careers.html">채용</a></div>'+
-        '<div><b>서비스</b><a href="'+root+'services.html#creative">광고 소재 제작</a></div>'+
+        '<div><b>서비스</b><a href="'+root+'services.html">광고 소재 제작</a></div>'+
         '<div><b>칼럼</b><a href="'+root+'blog/index.html">칼럼 전체</a></div>'+
         '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">운영 사례</a></div>'+
         '<div><b>SNS</b><a href="'+CONFIG.threads+'" target="_blank" rel="noopener">Threads</a></div>'+
