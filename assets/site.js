@@ -3,7 +3,6 @@
    ============================================================ */
 var CONFIG = {
   formUrl: 'https://forms.gle/hiVqT1a8VHmTjyti8',
-  threads: 'https://www.threads.com/@leo.adlab',
   // 샘플: video를 넣으면 영상, 비어 있으면 poster 이미지
   samples: (function(){ var a=[]; for(var i=1;i<=16;i++){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); } return a; })(),
   // 포트폴리오 (진짜마케팅 형식). 숫자·문구는 실제 값으로 교체
@@ -63,7 +62,7 @@ var CONFIG = {
         '<div><b>서비스</b><a href="'+root+'services.html">광고 소재 제작</a></div>'+
         '<div><b>칼럼</b><a href="'+root+'blog/index.html">칼럼 전체</a></div>'+
         '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">운영 사례</a></div>'+
-        '<div><b>SNS</b><a href="'+CONFIG.threads+'" target="_blank" rel="noopener">Threads</a></div>'+
+        '<div><b>문의</b><a href="mailto:help@adlab.ai.kr">help@adlab.ai.kr</a></div>'+
       '</div></div>'+
       '<div class="ft-bottom"><div class="ft-links"><a href="'+root+'inquiry.html?type=consult">제작 문의 <span>↗</span></a><a href="'+root+'services.html">서비스 소개 <span>↗</span></a></div><div class="ft-mark" aria-hidden="true">AD Lab</div></div>'+
       '<address class="ft-addr"><span>서울특별시 강남구 강남대로 338</span></address>'+
