@@ -703,3 +703,6 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 
 .ft .ft-addr{font-style:normal;margin-top:64px;font-size:12.5px;line-height:1.75;color:var(--mute)}
 .ft .ft-addr+.copy{margin-top:20px}
+
+.ft .ft-addr{margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.ft .ft-addr+.copy{margin-top:2px;padding-top:0;border-top:0}
