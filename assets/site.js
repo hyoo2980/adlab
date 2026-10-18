@@ -18,7 +18,7 @@ var CONFIG = {
   // 장면 배경: media 폴더의 jpg를 mp4로 바꾸면 영상으로 재생됩니다.
   shots: { hero:'media/hero.mp4', approach:'media/approach.mp4', capability:'media/numbers.mp4', cta:'media/cta.mp4' },
   clients: 180,           // 함께한 브랜드 수 (숫자만 바꾸면 됩니다)
-  version: '20261017clay3'
+  version: '20261018tiles'
 };
 
 (function(){
