@@ -48,7 +48,7 @@ var CONFIG = {
         '<a href="'+root+'portfolio.html"'+cur('portfolio')+'>레퍼런스</a>'+
         '<a href="'+root+'careers.html"'+cur('careers')+'>채용</a>'+
       '</nav>'+
-      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=consult">제작 문의</a></div>'+
+      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=sample">무료 샘플 받기</a></div>'+
     '</div></header>';
   }
 
