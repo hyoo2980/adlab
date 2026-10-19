@@ -761,3 +761,36 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .st-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:56px;padding-top:34px;border-top:1px solid rgba(255,255,255,.2)}
 .st-foot p{font-size:clamp(22px,2.6vw,36px);font-weight:700;letter-spacing:-.045em;margin:0}
 @media (max-width:900px){.st-grid{grid-template-columns:1fr}.s-steps{padding:90px 0}}
+
+/* 홈 신규 구간: 밝은 톤으로 통일 (회사소개·칼럼과 같은 따뜻한 화이트) */
+.s-problem,.s-steps{background:#f7f4ef;color:#111}
+.s-steps{background:#fff}
+.s-problem .tag,.s-steps .tag{color:#555}
+.s-problem .pq{color:#111}
+.pchk-t{color:#8a8a92}
+.pc{color:#111;background:#fff;border:1px solid #e4e1dc}
+.pc:hover{border-color:#111}
+.pc i{border-color:#c9c6c0}
+.pc[aria-pressed="true"]{background:#fff1ee;border-color:#ff4a33}
+.pchk-res{background:#111;color:#fff}
+.pchk-res .btn{background:#ff4a33;color:#fff}
+.pchk-res strong{color:#ff7a66}
+.pcause h2{color:#111}
+.pcause h2 em{color:#ff4a33}
+.pcause p{color:#6b6b73}
+.pcmp{border-top:1px solid #111}
+.pcmp>div{border-bottom:1px solid #e4e1dc}
+.pcmp .ph-row{color:#8a8a92}
+.pcmp .ph-row span:last-child{color:#ff4a33}
+.pcmp .pr span:first-child{color:#8a8a92}
+.pcmp .pr span:nth-child(2){color:#6b6b73}
+.pcmp .pr span:last-child{color:#111}
+.pcmp b{color:#ff4a33}
+.pbridge{color:#111}
+.s-steps .h2{color:#111}
+.st{background:#f7f4ef;border:0;color:#111}
+.st:hover{box-shadow:0 30px 60px -36px rgba(15,15,16,.4);border-color:transparent}
+.st b{color:#ff4a33}
+.st p{color:#6b6b73}
+.st-foot{border-top:1px solid #111}
+.st-foot p{color:#111}

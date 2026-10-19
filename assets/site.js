@@ -186,6 +186,7 @@ var CONFIG = {
     var onS=function(){
       var y=window.scrollY, h=hdr.offsetHeight, inStage=false;
       [sw,ct].forEach(function(z){ if(!z) return; var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=true; });
+      [].forEach.call(document.querySelectorAll('.s-problem,.s-steps'),function(z){ var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=false; });
       hdr.classList.toggle('scrolled', y>24 && !inStage);
       hdr.classList.toggle('over-dark', y>24 && inStage);
     };
