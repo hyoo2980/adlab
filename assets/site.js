@@ -4,7 +4,7 @@
 var CONFIG = {
   formUrl: 'https://forms.gle/hiVqT1a8VHmTjyti8',
   // 샘플: video를 넣으면 영상, 비어 있으면 poster 이미지
-  samples: (function(){ var a=[]; for(var i=1;i<=28;i++){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); } return a; })(),
+  samples: (function(){ var a=[], order=[]; for(var k=0;k<12;k++){ order.push(17+k); order.push(1+k); if(k===5) order.push(13,14,15,16); } /* 뷰티·리빙 신규(17~28)를 앞쪽에 섞어 배치 */ order.forEach(function(i){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); }); return a; })(),
   // 포트폴리오 (진짜마케팅 형식). 숫자·문구는 실제 값으로 교체
   cases: [
     { brand:'건강기능식품 A', cat:'건강 · 웰니스', title:'후기형 소재로 구매 전환 개선', big:'324.6%', bigLabel:'Meta 구매 ROAS', subs:['CTR 3.4%','CPA ↓31%','소재 48편'], desc:'첫 3초 후킹과 체험 후기형 구성을 비교해 반응이 좋은 방향의 소재를 늘렸습니다.', basis:'집계 기준: Meta · 최근 3개월 · 구매 전환 기준', img:'cases/health.jpg' },
