@@ -271,7 +271,7 @@ var CONFIG = {
     addEventListener('scroll',upd,{passive:true}); upd(); }
 })();
 
-(function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat]'));
+(function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat],.pcard[data-cat]'));
   tb.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(tb.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); ps.forEach(function(p){ p.classList.toggle('hide', f!=='all' && p.getAttribute('data-cat')!==f); }); }); })();
 
 (function(){ var w=document.querySelector('[data-wall]'); if(w){ var h=''; for(var r=0;r<3;r++) for(var i=1;i<=16;i++){ var n=(i<10?'0':'')+i; if(r*16+i>20) break; h+='<img src="ads/ad'+n+'.webp" alt="" loading="lazy">'; } w.innerHTML=h; }

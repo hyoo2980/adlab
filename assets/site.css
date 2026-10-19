@@ -799,3 +799,20 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .pbridge{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;max-width:900px;margin-top:72px;padding-top:36px;border-top:1px solid #111}
 .pbridge p{margin:0;font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.045em;line-height:1.4;color:#111}
 .s-steps{padding-bottom:130px}
+
+/* 칼럼 카드: 이미지 + 분류/날짜 + 제목 + 미리보기 + 작성자 */
+.pcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 28px}
+.pcard{display:grid;grid-template-rows:auto auto auto 1fr auto;gap:0;color:inherit}
+.pc-img{aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#eee}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .pc-img img{transform:scale(1.05)}
+.pc-meta{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:13px;color:#8a8a92}
+.pc-meta b{color:#ff4a33;font-weight:700}
+.pc-meta i{font-style:normal;color:#c9c6c0}
+.pcard h3{font-size:19px;font-weight:700;letter-spacing:-.035em;line-height:1.5;margin:12px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:keep-all}
+.pcard p{font-size:14.5px;line-height:1.7;color:#6b6b73;margin:10px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:keep-all}
+.pc-by{margin-top:16px;font-size:13px;color:#8a8a92}
+.pcard:hover h3{text-decoration:underline;text-underline-offset:4px}
+.pcard.hide{display:none}
+@media (max-width:900px){.pcards{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pcards{grid-template-columns:1fr}}
