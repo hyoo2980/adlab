@@ -816,3 +816,9 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .pcard.hide{display:none}
 @media (max-width:900px){.pcards{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.pcards{grid-template-columns:1fr}}
+
+.s-cases{background:#fff;padding:120px 0 110px}
+.s-cases .h2{margin-top:22px}
+.s-cases .cases{margin-top:56px}
+.s-cases-more{margin-top:44px}
+@media (max-width:900px){.s-cases{padding:90px 0}}
