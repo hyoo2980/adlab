@@ -794,3 +794,8 @@ details p{padding:0 56px 30px 0;color:var(--sub);font-size:16px;line-height:1.85
 .st p{color:#6b6b73}
 .st-foot{border-top:1px solid #111}
 .st-foot p{color:#111}
+
+.has-shots .stagewrap .s-steps .h2,.has-shots .stagewrap .s-problem .h2{color:#111;text-shadow:none}
+.pbridge{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;max-width:900px;margin-top:72px;padding-top:36px;border-top:1px solid #111}
+.pbridge p{margin:0;font-size:clamp(22px,2.6vw,34px);font-weight:700;letter-spacing:-.045em;line-height:1.4;color:#111}
+.s-steps{padding-bottom:130px}
