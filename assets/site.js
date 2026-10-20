@@ -4,7 +4,7 @@
 var CONFIG = {
   formUrl: 'https://forms.gle/hiVqT1a8VHmTjyti8',
   // 샘플: video를 넣으면 영상, 비어 있으면 poster 이미지
-  samples: (function(){ var a=[]; for(var i=1;i<=16;i++){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); } return a; })(),
+  samples: (function(){ var a=[], order=[]; for(var k=0;k<12;k++){ order.push(17+k); order.push(1+k); if(k===5) order.push(13,14,15,16); } /* 뷰티·리빙 신규(17~28)를 앞쪽에 섞어 배치 */ order.forEach(function(i){ var n=String(i).padStart(2,'0'); a.push({poster:'ads/ad'+n+'.webp', video:''}); }); return a; })(),
   // 포트폴리오 (진짜마케팅 형식). 숫자·문구는 실제 값으로 교체
   cases: [
     { brand:'건강기능식품 A', cat:'건강 · 웰니스', title:'후기형 소재로 구매 전환 개선', big:'324.6%', bigLabel:'Meta 구매 ROAS', subs:['CTR 3.4%','CPA ↓31%','소재 48편'], desc:'첫 3초 후킹과 체험 후기형 구성을 비교해 반응이 좋은 방향의 소재를 늘렸습니다.', basis:'집계 기준: Meta · 최근 3개월 · 구매 전환 기준', img:'cases/health.jpg' },
@@ -18,7 +18,7 @@ var CONFIG = {
   // 장면 배경: media 폴더의 jpg를 mp4로 바꾸면 영상으로 재생됩니다.
   shots: { hero:'media/hero.mp4', approach:'media/approach.mp4', capability:'media/numbers.mp4', cta:'media/cta.mp4' },
   clients: 180,           // 함께한 브랜드 수 (숫자만 바꾸면 됩니다)
-  version: '20261017clay3'
+  version: '20261018tiles'
 };
 
 (function(){
@@ -48,7 +48,7 @@ var CONFIG = {
         '<a href="'+root+'portfolio.html"'+cur('portfolio')+'>레퍼런스</a>'+
         '<a href="'+root+'careers.html"'+cur('careers')+'>채용</a>'+
       '</nav>'+
-      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=consult">제작 문의</a></div>'+
+      '<div class="ctas"><a class="btn red sm" href="'+root+'inquiry.html?type=sample">무료 샘플 받기</a></div>'+
     '</div></header>';
   }
 
@@ -61,7 +61,7 @@ var CONFIG = {
         '<div><b>회사소개</b><a href="'+root+'about.html">회사소개</a><a href="'+root+'careers.html">채용</a></div>'+
         '<div><b>서비스</b><a href="'+root+'services.html">광고 소재 제작</a></div>'+
         '<div><b>칼럼</b><a href="'+root+'blog/index.html">칼럼 전체</a></div>'+
-        '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">운영 사례</a></div>'+
+        '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">성과 사례</a></div>'+
         '<div><b>문의</b><a href="mailto:help@adlab.ai.kr">help@adlab.ai.kr</a></div>'+
       '</div></div>'+
       '<div class="ft-bottom"><div class="ft-links"><a href="'+root+'inquiry.html?type=consult">제작 문의 <span>↗</span></a><a href="'+root+'services.html">서비스 소개 <span>↗</span></a></div><div class="ft-mark" aria-hidden="true">AD Lab</div></div>'+
@@ -186,6 +186,7 @@ var CONFIG = {
     var onS=function(){
       var y=window.scrollY, h=hdr.offsetHeight, inStage=false;
       [sw,ct].forEach(function(z){ if(!z) return; var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=true; });
+      [].forEach.call(document.querySelectorAll('.s-problem,.s-steps'),function(z){ var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=false; });
       hdr.classList.toggle('scrolled', y>24 && !inStage);
       hdr.classList.toggle('over-dark', y>24 && inStage);
     };
@@ -270,9 +271,12 @@ var CONFIG = {
     addEventListener('scroll',upd,{passive:true}); upd(); }
 })();
 
-(function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat]'));
+(function(){ var tb=document.querySelector('.tabs'); if(!tb) return; var ps=[].slice.call(document.querySelectorAll('.post[data-cat],.pcard[data-cat]'));
   tb.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(tb.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); ps.forEach(function(p){ p.classList.toggle('hide', f!=='all' && p.getAttribute('data-cat')!==f); }); }); })();
 
 (function(){ var w=document.querySelector('[data-wall]'); if(w){ var h=''; for(var r=0;r<3;r++) for(var i=1;i<=16;i++){ var n=(i<10?'0':'')+i; if(r*16+i>20) break; h+='<img src="ads/ad'+n+'.webp" alt="" loading="lazy">'; } w.innerHTML=h; }
   var t=document.getElementById('pfTabs'); if(!t) return;
   t.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; [].forEach.call(t.children,function(x){x.classList.toggle('on',x===b);}); var f=b.getAttribute('data-f'); [].forEach.call(document.querySelectorAll('.case'),function(c){ var m=c.querySelector('.meta'); var cat=m?m.textContent:''; c.style.display=(f==='all'||cat.indexOf(f)>-1)?'':'none'; }); }); })();
+
+(function(){ var bs=[].slice.call(document.querySelectorAll('.pc')); if(!bs.length) return; var res=document.querySelector('.pchk-res'), n=document.getElementById('pcn');
+  bs.forEach(function(b){ b.addEventListener('click',function(){ b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true'?'false':'true'); var c=bs.filter(function(x){return x.getAttribute('aria-pressed')==='true';}).length; n.textContent=c; res.hidden=c===0; }); }); })();
