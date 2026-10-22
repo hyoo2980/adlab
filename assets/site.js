@@ -59,7 +59,7 @@ var CONFIG = {
       '<div class="ft-grid"><div><a class="logo" href="'+(root||'./')+'">AD Lab</a><p class="small" style="margin-top:14px">Video Ad Creative Production</p></div>'+
       '<div class="ft-cols">'+
         '<div><b>회사소개</b><a href="'+root+'about.html">회사소개</a><a href="'+root+'careers.html">채용</a></div>'+
-        '<div><b>서비스</b><a href="'+root+'services.html">광고 소재 제작</a></div>'+
+        '<div><b>서비스</b><a href="'+root+'services.html">광고 소재 제작</a><a href="'+root+'ads.html">광고 운영</a><a href="'+root+'web.html">홈페이지·상세페이지</a></div>'+
         '<div><b>칼럼</b><a href="'+root+'blog/index.html">칼럼 전체</a></div>'+
         '<div><b>레퍼런스</b><a href="'+root+'portfolio.html">성과 사례</a></div>'+
         '<div><b>문의</b><a href="mailto:help@adlab.ai.kr">help@adlab.ai.kr</a></div>'+
@@ -182,12 +182,14 @@ var CONFIG = {
   /* 헤더: 스크롤 시 배경 */
   var hdr=document.querySelector('.hd');
   if (hdr){
-    var sw=document.querySelector('.stagewrap')||document.querySelector('.ab-hero'), ct=document.querySelector('.s-cta.has-img');
+    var sw=document.querySelector('.stagewrap')||document.querySelector('.ab-hero')||document.querySelector('.pd-hero.dark'), ct=document.querySelector('.s-cta.has-img');
     var onS=function(){
       var y=window.scrollY, h=hdr.offsetHeight, inStage=false;
       [sw,ct].forEach(function(z){ if(!z) return; var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=true; });
       [].forEach.call(document.querySelectorAll('.s-problem,.s-steps'),function(z){ var r=z.getBoundingClientRect(); if(r.top<=h && r.bottom>h) inStage=false; });
-      hdr.classList.toggle('scrolled', y>24 && !inStage);
+      var pdh=document.querySelector('.pd-hero.dark'), pdo=false; if(pdh){ var pr=pdh.getBoundingClientRect(); pdo = pr.top<=h && pr.bottom>h; }
+      hdr.classList.toggle('pd-over', pdo);
+      hdr.classList.toggle('scrolled', y>24 && !inStage && !pdo);
       hdr.classList.toggle('over-dark', y>24 && inStage);
     };
     onS(); window.addEventListener('scroll',onS,{passive:true});
@@ -280,3 +282,29 @@ var CONFIG = {
 
 (function(){ var bs=[].slice.call(document.querySelectorAll('.pc')); if(!bs.length) return; var res=document.querySelector('.pchk-res'), n=document.getElementById('pcn');
   bs.forEach(function(b){ b.addEventListener('click',function(){ b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true'?'false':'true'); var c=bs.filter(function(x){return x.getAttribute('aria-pressed')==='true';}).length; n.textContent=c; res.hidden=c===0; }); }); })();
+
+/* 상품 페이지: 구조 목록↔폰 목업 동기화, 진행 라인, 카드 기울기 */
+(function(){
+  var st=[].slice.call(document.querySelectorAll('.pd-st li')), bl=[].slice.call(document.querySelectorAll('.pd-blk'));
+  if(st.length){ var i=0,t=null;
+    function on(k){ st.forEach(function(x,n){x.classList.toggle('on',n===k);}); bl.forEach(function(x,n){x.classList.toggle('on',n===k);}); }
+    function run(){ if(t) return; on(i); t=setInterval(function(){ i=(i+1)%st.length; on(i); },2600); }
+    function stop(){ clearInterval(t); t=null; }
+    st.forEach(function(x,n){ x.addEventListener('mouseenter',function(){ i=n; on(n); }); });
+    var w=document.querySelector('.pd-struct');
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ if(es[0].isIntersecting) run(); else { stop(); } },{rootMargin:'-20% 0px -20% 0px'}).observe(w); else run();
+  }
+  var fl=document.querySelector('.pd-flow');
+  if(fl){ var lis=[].slice.call(fl.querySelectorAll('li')), p=-1, tm=null;
+    function step(){ p=(p+1)%(lis.length+1); fl.style.setProperty('--fillnum',(p/lis.length*100)); lis.forEach(function(x,k){ x.classList.toggle('lit',k<p); x.classList.toggle('now',k===p-1); }); }
+    function go(){ if(tm) return; p=-1; step(); tm=setInterval(step,1500); }
+    function no(){ clearInterval(tm); tm=null; }
+    if('IntersectionObserver' in window) new IntersectionObserver(function(es){ if(es[0].isIntersecting) go(); else no(); },{rootMargin:'-18% 0px -18% 0px'}).observe(fl); else go();
+  }
+  if(window.matchMedia && window.matchMedia('(hover:hover)').matches){
+    [].forEach.call(document.querySelectorAll('.pd-card,.pd-prod'),function(c){
+      c.addEventListener('mousemove',function(e){ var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5; c.style.transform='perspective(800px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) translateY(-6px)'; });
+      c.addEventListener('mouseleave',function(){ c.style.transform=''; });
+    });
+  }
+})();
